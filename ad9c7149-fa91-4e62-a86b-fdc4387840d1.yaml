@@ -3,6 +3,7 @@
 # Follow strict YAML spec for the file layout and embed MD as needed where specified.  This permits use of standard spec tools without needing custom solutions.
 # For consistency, use camelCase for key names and follow style conventions elsewhere.
 # For readability, remove anything that is not actually needed.
+# For useability, ensure the resulting structures work/make sense.  [Online YAML Parser](https://yaml-online-parser.appspot.com/) is good for this
   # NOTE:  This is the spec doc so everything is showing here
 
 ### Header
