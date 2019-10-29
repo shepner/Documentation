@@ -2,7 +2,9 @@
 ---
 # Follow strict YAML spec for the file layout and embed MD as needed where specified.  This permits use of standard spec tools without needing custom solutions.
 # For consistency, use camelCase for key names and follow style conventions elsewhere.
-# For readability, remove anything that is not actually needed.
+# For readability, 
+  # remove anything that is not actually needed
+  # while you dont have to quote all strings, it is safer if you do
 # For useability, ensure the resulting structures work/make sense.  [Online YAML Parser](https://yaml-online-parser.appspot.com/) is good for this
   # NOTE:  This is the spec doc so everything is showing here
 
@@ -10,7 +12,7 @@
 # This section contains the administrative minutiae needed to link, reference, etc and generally manage these documents. New keys may be created if/as needed but make sure they are tracked in the spec doc
  
 id: "ad9c7149-fa91-4e62-a86b-fdc4387840d1" # [UUIDv4 generator](https://www.uuidgenerator.net/)
-type: procedure # Options: "[regulation|policy|standard|requirement|control|procedure]"
+type: "procedure" # Options: "[regulation|policy|standard|requirement|control|procedure]"
 title: "Documentation management"
 shortDescription: "Specification for file format and management"
 #referenceTag:
@@ -26,8 +28,8 @@ shortDescription: "Specification for file format and management"
   #- child: # or just comment out the whole line
 revision:
   # The date field is to use ISO format.  Default should be `YYYYMMDD` but may include the time if necessary (but then dont forget TZ)
-  - date: 20191029
-    status: draft # Options: [draft|current|expire]
+  - date: "20191029" # This is a string, not an integer!
+    status: "draft" # Options: [draft|current|expire]
     name: "Stephen Hepner"
     reason: "Initial draft"
 
