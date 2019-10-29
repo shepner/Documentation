@@ -12,7 +12,7 @@ id: "ad9c7149-fa91-4e62-a86b-fdc4387840d1" # [UUIDv4 generator](https://www.uuid
 type: procedure # Options: "[regulation|policy|standard|requirement|control|procedure]"
 title: "Documentation management"
 shortDescription: "Specification for file format and management"
-referenceTag:
+#referenceTag:
   # this section is used to link to other documents
   # Reserved keys:  'parent', 'peer', and 'child'
   # 0 - N tags/keys may be used and tags may have 0 - N values
@@ -103,9 +103,7 @@ documentBody: | # No more YAML comments after this point
   ...
   ```
 
-
-
-  References:
+  ### References:
   * https://www.codeproject.com/Tips/5248463/Building-YAML-Flavored-Markdown-with-EPS-Extension
   * https://jmduke.com/2015/11/09/embedding-markdown-in-yaml
   * https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/
@@ -117,7 +115,5 @@ documentBody: | # No more YAML comments after this point
 
   * https://codebeautify.org/yaml-validator
   * https://yaml-online-parser.appspot.com/
-
-
 
 ...
