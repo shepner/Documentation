@@ -25,14 +25,10 @@ referenceTag:
   #- child: # or just comment out the whole line
 revision:
   # The date field is to use ISO format.  Default should be `YYYYMMDD` but may include the time if necessary (but then dont forget TZ)
-  - date: 20191001
-    status: draft # Options: [draft|current|expire]
-    name: Curabitur Mauris
-    reason: "nec mattis augue metus non nulla"
   - date: 20191029
-    status: current # Options: [draft|current|expire]
-    name: Nullam Quisque
-    reason: "quis euismod ipsum nisi sit amet elit"
+    status: draft # Options: [draft|current|expire]
+    name: "Stephen Hepner"
+    reason: "Initial draft"
 
 ### Document
 # "documentBody" contains the body of the document
