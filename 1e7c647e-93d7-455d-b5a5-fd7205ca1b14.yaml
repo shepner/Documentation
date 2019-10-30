@@ -3,7 +3,7 @@
 id: "1e7c647e-93d7-455d-b5a5-fd7205ca1b14"
 type: "regulation"
 title: "Requirement 1.1.2"
-shortDescription: "Process to formally approve and test network changes"
+shortDescription: "Maintain a network diagram"
 source: "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
 referenceTag:
   - "PCI":
