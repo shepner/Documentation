@@ -1,0 +1,111 @@
+%YAML 1.2
+---
+id: "68f9d866-491a-4231-9855-3b42f0167755"
+type: guidance
+title: "Cybersecurity Strategy"
+shortDescription: "High-level approach to cyberscurity"
+referenceTag:
+  #- parent: 
+  #- peer:
+  #- child:
+status:
+  - "review" # Options: [draft|review|complete|expire]
+  - effective: 201910
+  - expire: !
+revision:
+  - date: "20191011"
+    name: "Stephen Hepner"
+    reason: "Initial draft"
+  - date: "20191030" # This is a string, not an integer!
+    name: "Stephen Hepner"
+    reason: "restructure into new documentation format"
+documentBody: |
+  # Mission statement
+
+  Manage the company’s security within the cyber realm[[CISO Platform - Understanding difference between Cyber Security & Information Security](https://www.cisoplatform.com/profiles/blogs/understanding-difference-between-cyber-security-information)]
+
+  ## Methodology
+  
+  Here is the high level approach to accomplish the mission statement
+  
+  ###Increase security through education
+  
+  The best results are obtained when the individual understands why they are asked to do something, and agrees with the decision.  The basis of this is achieved through education and is enforced by the experts providing a consistent message in a close working relationship.  This empowers the individual to make the best choices.  When applied across an organization, this becomes a self sustaining culture.
+
+  ### Levels of Security proficiency
+  
+  High: Can speak to the requirements and fully understands the logic behind them
+  Med: Knows best practice, knows why this is important, and knows to ask for further guidance
+  Low: Has awareness, knows that it is important, and knows the basics
+  None: May have heard something in the news but does not view any of this as relevant
+
+  Train all employees to obtain at least a Low level of proficiency.  IT staff, and developers to Medium.  Security staff may be Med High or High depending on the role.
+  
+  ### Simple security is the best security
+  
+  All things equal, there is a strong correlation between the quality of an architecture and the difficulty to secure it.  Generally speaking, complicated security solutions occur when there is a design flaw.  Overcome this and generally you will have a much better solution which is cheaper and easier to maintain.
+
+  Similarly, the security policy must be comply with this principal as well.  While it must be thorough, this too must be simple, concise, well reasoned, and evenly applied.
+
+  An advantage of this approach is that it lends itself well to Agile methodology, automation, and Cloud.
+
+  ## Techniques
+  
+  These are the core concepts used to design, implement, and maintain security:
+  * Zero trust model
+  * DevSecOps
+  * Logical approach to security
+  * Be able to support BYOD, cloud based user tools/services
+  * Full transparency security model
+  * Automation
+
+  # Security Team
+  
+  ## Service catalog
+
+  This is a starting point for ideas.  The full list is TBD and will be based on the team definitions:
+  * Architecture
+    - Application consulting
+  * Compliance
+    - Vulnerability testing
+    - Risk assessment
+  * IAM
+    - MFA
+    - Vault
+  * Incident response
+  * Law enforcement support
+  * Security training
+  * Certificate management
+
+  ## Expectations
+
+  The personnel in the Security team are expected to drive greater security by doing the following:
+
+  * Sell security by educating the customers.  If a customer wants something counter to the requirements, this is an educational opportunity.  Work back to determine the root cause of the problem and assist with creating a better solution.  Demonstrate why this is in the customer’s best interest by being cheaper/faster/easier/etc and not just because it meets requirements.  Strive for positive interactions and results.
+  * Partner with the customers.  Be friendly, outgoing, and helpful.  Lead by example.  Know everyone and be known by everyone.  Find the key individuals, meet with them to see what is going on and what to expect.
+  * Maintain the big picture to understand the scope and context of what you are doing.  This will determine priorities.
+
+  ## Process
+
+  In order to set priorities, there needs to be a sustainable process which is comprised of the following items
+
+  ### Information collection
+
+  A plan created in a vacuum is unlikely to be successful so information must be collected.
+  * Fact finding
+  * Detect malicious activity
+  * Cyber (Threat) Intelligence
+  * Retrospective review
+
+  ### Plan
+
+  Once the scope of the problem is known, determine the methodology to resolve it
+  * Design
+  * Incident response plan
+  
+  ### Implement
+
+  Execution of the plan
+  * Engineering/operations
+  * Incident response
+...
