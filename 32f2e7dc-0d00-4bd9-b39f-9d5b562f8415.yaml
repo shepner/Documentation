@@ -1,0 +1,40 @@
+%YAML 1.2
+---
+id: "32f2e7dc-0d00-4bd9-b39f-9d5b562f8415"
+type: "regulation"
+title: "Requirement 1.1.1"
+shortDescription: "Establish and implement firewall and router configuration standards"
+source: "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
+referenceTag:
+  - "PCI":
+    - "PCI DSS v3.2.1"
+      - "1.1.1"
+  - parent: "cd498dae-9287-4432-91a3-97adf1ea4dd6"
+status:
+  - "complete" # Options: [draft|review|complete|expire]
+  - effective: 201805
+  - expire: !
+revision:
+  - date: "20191030"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+documentBody: |
+  # PCI DSS Requirements
+  
+  **1.1.1** A formal process for approving and testing all network connections and changes to the firewall and router configurations
+
+  # Testing Procedures
+  
+  **1.1.1.a** Examine documented procedures to verify there is a formal process for testing and approval of all:
+  
+  * Network connections and
+  * Changes to firewall and router configurations
+  
+  **1.1.1.b** For a sample of network connections, interview responsible personnel and examine records to verify that network connections were approved and tested.
+
+  # Guidance
+  
+  A documented and implemented process for approving and testing all connections and changes to the firewalls and routers will help prevent security problems caused by misconfiguration of the network, router, or firewall.
+  
+  Without formal approval and testing of changes, records of the changes might not be updated, which could lead to inconsistencies between network documentation and the actual configuration.
+...
