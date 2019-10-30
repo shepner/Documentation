@@ -1,6 +1,6 @@
 #!`which python3`
 """
-# summarize.py
+# publish.py
 
 ## Purpose
 
