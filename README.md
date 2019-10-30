@@ -1,6 +1,10 @@
 # Documentation
 
-* [Documentation spec](https://github.com/shepner/Documentation/blob/master/ad9c7149-fa91-4e62-a86b-fdc4387840d1.yaml)
+Guidance
+* [Documentation spec](https://github.com/shepner/Documentation/blob/master/ad9c7149-fa91-4e62-a86b-fdc4387840d1.yaml): Specification for file format and management
+
+Procedure
+* [Documentation management](https://github.com/shepner/Documentation/blob/master/68f9d866-491a-4231-9855-3b42f0167755.yml): High-level approach to cybersecurity
 
 PCI DSS 3.2.1
 * [Requirement 1](https://github.com/shepner/Documentation/blob/master/ebd4a2a1-1c57-4dfb-b13b-c02355a40d74.yaml): Install and maintain a firewall configuration to protect cardholder data
