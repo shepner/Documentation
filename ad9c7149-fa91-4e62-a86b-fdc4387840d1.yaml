@@ -10,11 +10,11 @@
 
 ### Header
 # This section contains the administrative minutiae needed to link, reference, etc and generally manage these documents. New keys may be created if/as needed but make sure they are tracked in the spec doc
- 
 id: "ad9c7149-fa91-4e62-a86b-fdc4387840d1" # [UUIDv4 generator](https://www.uuidgenerator.net/)
 type: "procedure" # Options: "[regulation|policy|standard|requirement|control|procedure]"
 title: "Documentation management"
 shortDescription: "Specification for file format and management"
+#source: "https://domain.com/some/url/here" # needed if this material came from somewhere else
 #referenceTag: # Reserved keys:  'parent', 'peer', and 'child'
   # this section is used to link to other documents
   # 0 - N tags/keys may be used and tags may have 0 - N values
@@ -25,12 +25,18 @@ shortDescription: "Specification for file format and management"
   #  - "917c271c-d0d4-4971-9f34-c4e2e7085fe0"
   #- peer: ! # `!` = null
   #- child: # or just comment out the whole line
-revision:
+status: # this section is to provide some automatic documentation management
+  - "review" # Options: [draft|review|complete|expire]
+  - effective: 201910
+  - expire: !
+revision: # who did what when.  Keep it short and useful
   # The date field is to use ISO format.  Default should be `YYYYMMDD` but may include the time if necessary (but then dont forget TZ)
   - date: "20191029" # This is a string, not an integer!
-    status: "draft" # Options: [draft|current|expire]
     name: "Stephen Hepner"
     reason: "Initial draft"
+  - date: "20191030" # This is a string, not an integer!
+    name: "Stephen Hepner"
+    reason: "restructure of header section"
 
 ### Document
 # "documentBody" contains the body of the document
@@ -117,5 +123,4 @@ documentBody: | # No more YAML comments after this point
 
   * https://codebeautify.org/yaml-validator
   * https://yaml-online-parser.appspot.com/
-
 ...
