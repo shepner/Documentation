@@ -17,7 +17,9 @@ read contents of repo
   if *.yaml file
     parse YAML
     generate tabular output in html:
-      layout: "[title](URL)", "shortDescription", "most recent revision date", "most recent revision status"
+      group by `type`:  1 table per type
+      sort by "most recent `revision` `date`" desc
+      row layout: "[`title`](URL)", "`shortDescription`", "most recent `revision` `date`", "most recent `revision` `status`"
       convert MD to html
 save file to summary.html
 ```
