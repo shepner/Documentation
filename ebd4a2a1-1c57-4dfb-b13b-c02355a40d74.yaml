@@ -6,7 +6,9 @@ title: "Requirement 1"
 shortDescription: "Install and maintain a firewall configuration to protect cardholder data"
 source: "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
 referenceTag:
-  - "PCI": "PCI DSS v3.2.1"
+  - "PCI":
+    - "PCI DSS v3.2.1"
+      - "1"
 status:
   - "complete" # Options: [draft|review|complete|expire]
   - effective: 201805
