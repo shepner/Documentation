@@ -10,7 +10,7 @@ The purpose of this application is to scan through all of the documents within t
 """
 ## Structure
 
-``` psudocode
+``` pseudocode
 read contents of repo
   if *.yaml file
     parse YAML
