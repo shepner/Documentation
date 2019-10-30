@@ -3,7 +3,7 @@
 id: "32f2e7dc-0d00-4bd9-b39f-9d5b562f8415"
 type: "regulation"
 title: "Requirement 1.1.1"
-shortDescription: "Establish and implement firewall and router configuration standards"
+shortDescription: "Process to formally approve and test network changes"
 source: "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
 referenceTag:
   - "PCI":
