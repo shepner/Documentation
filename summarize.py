@@ -7,6 +7,8 @@
 The purpose of this application is to scan through all of the documents within the repository and generate a single summary file which can be used to access them
 """
 
+# you can embed code here if you feel like it
+
 """
 ## Structure
 
@@ -23,9 +25,6 @@ save file to summary.html
 ## References
 * [PyYAML](https://pyyaml.org/)
 * [CommonMark/MarkDown](https://github.com/readthedocs/commonmark.py)
-
 """
 
 # code goes here
-
-
