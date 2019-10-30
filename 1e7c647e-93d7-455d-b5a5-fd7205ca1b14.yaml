@@ -1,0 +1,37 @@
+%YAML 1.2
+---
+id: "1e7c647e-93d7-455d-b5a5-fd7205ca1b14"
+type: "regulation"
+title: "Requirement 1.1.2"
+shortDescription: "Process to formally approve and test network changes"
+source: "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
+referenceTag:
+  - "PCI":
+    - "PCI DSS v3.2.1"
+      - "1.1.1"
+  - parent: "cd498dae-9287-4432-91a3-97adf1ea4dd6"
+status:
+  - "complete" # Options: [draft|review|complete|expire]
+  - effective: 201805
+  - expire: !
+revision:
+  - date: "20191030"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+documentBody: |
+  ## PCI DSS Requirements
+  
+  **1.1.2** Current network diagram that identifies all connections between the cardholder data environment and other networks, including any wireless networks
+
+  ## Testing Procedures
+  
+  **1.1.2.a** Examine diagram(s) and observe network configurations to verify that a current network diagram exists and that it documents all connections to cardholder data, including any wireless networks.
+  
+  **1.1.2.b** Interview responsible personnel to verify that the diagram is kept current.
+
+  ## Guidance
+  
+  Network diagrams describe how networks are configured, and identify the location of all network devices.
+
+  Without current network diagrams, devices could be overlooked and be unknowingly left out of the security controls implemented for PCI DSS and thus be vulnerable to compromise.
+...
