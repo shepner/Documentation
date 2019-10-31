@@ -1,0 +1,40 @@
+%YAML 1.2
+---
+id: "4a4d6ec7-4cce-45f8-aa79-df1764058818" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+type: "guidance" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+title: "Recruiting"
+shortDescription: "What to look for when recruiting"
+source: !
+classification: "public" # Options: [public|private|confidential]
+referenceTag: # Reserved keys:  'parent', 'peer', and 'child'
+  - parent: "ad9c7149-fa91-4e62-a86b-fdc4387840d1"
+status: # this section is to provide some automatic documentation management
+  - "draft" # Options: [draft|review|complete|expire]
+  - effective: 201910
+  - expire: !
+revision:
+  - date: "20191031"
+    name: "Stephen Hepner"
+    reason: "Initial draft"
+documentBody: |
+  Here are some thoughts about what I am looking for in an employee and how to find them.
+  
+  In a nutshell, I look for people who are, in no particular order: friendly, motivated, assertive, and compentent.
+  
+  There was a nice article by [Robert Glazer](https://www.linkedin.com/in/glazer/) titled "[How You Manage These 2 Kinds of Employees Will Define Your Company's Culture](https://www.linkedin.com/pulse/how-you-manage-2-kinds-employees-define-your-companys-robert-glazer/)".  In there, he provided the following graph:
+  
+  
+
+  To help select candidates, in the posting point them to these documents. In pre-screen, filter out those who have not read.   (You have my attention If you are reading this).  Then filter out those who are not highly motivated by what is said or implied  (this isn’t nessessarially just  the security implications either.  But it helps)
+
+  And can articulate how(and why) they think they can contribute 
+
+  Group leads are to expected to have high level of security knowledge as term of employment even if they start with none. There must be a willingness to quickly put in the work to learn.   At a min, this will involve reading and understanding all of the regulations . Note that understanding is not the same as just working in an environment covered by the regulation
+
+  There must be a fundamental agreement with the security model,  management style, and desired culture otherwise no one will be happy. Be prepared to speak to those points 
+
+  If you haven’t been scared off yet and find this all this intreaging, motivating, etc then there is a good chance I want to work with you
+
+  Must be able to think programmatically
+
+...
