@@ -10,7 +10,7 @@ The purpose of this application is to publish the YAML formatted document as HTM
 
 ``` pseudocode
 read .yaml file
-parse YAML
+parse the YAML contents
 generate document in CommonMark format:
   documentBody
   ---
@@ -24,13 +24,28 @@ write all files to destination
 ## References
 * [PyYAML](https://pyyaml.org/)
 * [pandoc](https://pandoc.org/)
+* [requests](https://requests.kennethreitz.org)
 """
 
+#pip install requests
 #pip install pyyaml
+
+URL='https://raw.githubusercontent.com/shepner/Documentation/master/1e7c647e-93d7-455d-b5a5-fd7205ca1b14.yaml'
+
+#read .yaml file
+import requests
+r = requests.get(URL)
+r.status_code
+#r.headers['content-type']
+#r.encoding
+#r.text
+#r.json()
+r.content
+
+#parse the YAML contents
 import yaml
 
-with open(r'E:\data\categories.yaml') as file:
-    documents = yaml.full_load(file)
-    for item, doc in documents.items():
-        print(item, ":", doc)
+documents = yaml.load(r.content)
+  for item, doc in documents.items():
+    print(item, ":", doc)
 
