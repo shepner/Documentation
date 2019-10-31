@@ -1,0 +1,44 @@
+%YAML 1.2
+---
+id: "4480c89d-1da0-4f18-9f8b-f0238333e69a" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+type: "guidance" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+title: "Security stance"
+shortDescription: "Discussion about what premise to use for the security model"
+source: !
+classification: "public" # Options: [public|private|confidential]
+referenceTag: # Reserved keys:  'parent', 'peer', and 'child'
+  - parent: !
+status: # this section is to provide some automatic documentation management
+  - "draft" # Options: [draft|review|complete|expire]
+  - effective: !
+  - expire: !
+revision:
+  - date: "20191031"
+    name: "Stephen Hepner"
+    reason: "Initial draft"
+documentBody: |
+  Going to play a game of chicken with you   Let’s see who is going to flinch first 
+
+  Two extremes of security:
+  Completely closed <—> completely open 
+
+  With completely closed, I can let my little paranoid heart run free.  And this is , to a point, easier.  Military, financial institutions and the like will be on this end of the spectrum 
+
+  With completely open, there are NO SECRETS.  Everything is on the internet. BYOD. Open Source it all. This is the modern ideal. 
+
+  I am prepared to go in the direction of that ideal but there is a limit for the default:  Zero trust 
+
+  The funny thing about the zero trust model is that you must trust a great deal which means the first exception would be:  Fail closed by default. Explicitly allow. 
+
+  However that is still too extreme in certain circumstances which would require:  fail open by default. Explicitly deny
+
+  Finally, even that is too extreme and there will be, possibly many, times this will be needed:  permit all
+
+  How to determine what gets which?  To do that, we first need to define Data Classifications to each of these models. Second, we need to apply those classifications to, everything. 
+
+  The assignment of those classifications is where the game of chicken comes in not to mention what the regulations have to say. So, no you can’t post credit cards along with their owners medical records on the internet for all to see. But there is no reason why you can’t do things like BYOD. 
+
+  Trick to being able to do this is to decide this early at the beginning. Architect it into everything from the get go. There is no way to bolt this on after the fact.  Attempting to do so will only result in something on the other (closed) extreme, endless issues, unhappy people, and probable data breaches. 
+
+  When are you going to flinch?
+...
