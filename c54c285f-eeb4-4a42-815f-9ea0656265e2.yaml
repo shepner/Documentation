@@ -1,0 +1,173 @@
+%YAML 1.2
+---
+id: "c54c285f-eeb4-4a42-815f-9ea0656265e2" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+type: "guidance" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+title: "Security Team Structure"
+shortDescription: "Outline and definition of the structure for the security team"
+source: !
+classification: "public" # Options: [public|private|confidential]
+referenceTag: # Reserved keys:  'parent', 'peer', and 'child'
+  - parent: !
+status: # this section is to provide some automatic documentation management
+  - "review" # Options: [draft|review|complete|expire]
+  - effective: 201910
+  - expire: !
+revision:
+  - date: "20191025"
+    name: "Stephen Hepner"
+    reason: "Initial draft"
+  - date: "20191031"
+    name: "Stephen Hepner"
+    reason: "Moved to the new file format"
+documentBody: |
+  # Security Team Structure
+  
+  ## Groups and responsibilities
+  
+  ### Security Architecture
+  
+  Responsible for:
+  * Creation of security architectural patterns
+  * Determination of what types of tools are needed and their priority
+  * Security policy/standard/guidance/requirements/controls
+  * Review of application architecture to ensure compliance and to determine threats
+  * Education - best practices, etc
+  * Selling group’s services to the company
+  * Collecting Cyber Security Intelligence data
+  * Documenting group specific procedures, etc
+
+  ### Security Intelligence
+  
+  Responsible for:
+  * Collection, management and dissemination of Cyber Security Intelligence* 
+    (*This is not just limited to threat intel)
+  * Detection, management, and remediation of cyber threats
+  * Tuning detection tools
+  * Education - awareness, risks, etc
+  * Selling group’s services to the company
+  * Documenting group specific procedures, etc
+
+  ### Security Operations
+  
+  Responsible for:
+  * DevSecOps
+  * Selection of vendors for tools based upon provided criteria
+  * Development of tools or automation needed in the support of the security program
+  * Implementation and support of security tools (or coordination for the support of said tools)
+  * IAM
+  * Disaster Recovery
+  * Education - Tools, services, etc
+  * Selling group’s services to the company
+  * Collecting Cyber Security Intelligence data
+  * Documenting group specific procedures, etc
+
+  ### Security Vulnerability Management
+  
+  Responsible for:
+  * All levels and forms of security testing
+    * Education - phishing campaigns, etc
+  * Management and remediation of all security vulnerabilities/bugs/defects and their sources which includes:
+    * Output of security testing
+    * User identified bugs/vulnerabilities
+    * Applications, libraries, and functions from any source (internal or 3rd party)
+    * Program languages.
+  * Vendor assessments
+  * Selling group’s services to the company
+  * Collecting Cyber Security Intelligence data
+  * Documenting group specific procedures, etc
+ 
+  ## Group structure
+
+  This uses “[...] the [X-team strategy](http://mitsloan.mit.edu/newsroom/newsbriefs-0605-ancona.php) advocated by MIT professor Deborah Ancona, who defines three tiers of team members: core, operational, and outer. The core consists of executives responsible for strategy. The operational group leads and makes decisions about day-to-day work but doesn’t tackle the larger issues handled by the core. And the outer network consists of temporary or part-time members who are brought in for a particular stage of the project because of their specialized expertise. (From: [hbr.org - Getting Virtual Teams Right](https://hbr.org/2014/12/getting-virtual-teams-right))
+  * Core:  Security management and leads
+  * Operational:  Security team members
+  * Outer:  Consultants
+
+  The groups, and the department as a whole, will be virtual where the members will be geographically separate.  While teleworkers are permitted, those assigned to a location are expected to operate from that location.  A weekly AWA (Alternate Work Arrangement) day working from home however may be arranged.
+
+  Each group will be led by a Team Lead (or Manager if needed), limited to 4-5 employees including the manager/lead, and a maximum of 10 people with consultants. (From: [hbr.org - Getting Virtual Teams Right](https://hbr.org/2014/12/getting-virtual-teams-right))
+
+  Consultants are limited to 6 month contracts for no more than 18 months max after which there must be a minimum of 6 months before the contract can be renewed.
+
+  ## Organization chart
+  CISO
+  * ERC Manager
+  * Security Manager
+    * Group: Security Architecture
+      * Team lead
+      * Members
+      * Consultants
+    * Group: Security Intelligence
+      * Team lead
+      * Members
+      * Consultants
+    * Group: Security Operations
+      * Team lead
+      * Members
+      * Consultants
+    * Group: Security Vulnerability Management
+      * Team lead
+      * Members
+      * Consultants
+ 
+  ## Possible Roles per Group
+  
+  Security Architecture
+    * Cybersecurity Architect
+    * Cybersecurity Analyst
+  
+  Security Operations
+    * Cybersecurity Engineer
+    * Cybersecurity Analyst
+    * Software Developer
+  
+  Security Incident Management
+    * Cybercrime Investigator
+    * Cybersecurity Analyst
+    * Software Developer
+  
+  Security Vulnerability Management
+    * Cybersecurity Analyst
+    * Software Developer
+
+  ## Roles
+  
+  ### Cybersecurity Analyst
+  
+  Will be responsible for managing the resolution of defects that are uncovered
+  * Security proficiency level:  Med (general)
+  * Primary skills needed
+  
+  ### Cybersecurity Architect
+  
+  Will be responsible for tracking down all new and existing applications.  Determine if each is compliant with requirements.  Generate/maintain threat models.
+  * Security proficiency level:  High
+  * Primary skills needed
+  
+  ### Cybersecurity Engineer
+  
+  Build, configure, support the security tools
+  * Security proficiency level:  Med to High
+  * Primary skills needed
+    * UNIX
+    * Windows
+    * Cloud (which?)
+    * DevOps
+
+  The initial person in this role must be a generalist who can quickly adapt to the situation at hand.  Ideally would be a candidate for a team lead.  A senior level person would likely be the best fit.  Needs to be able to partner with other teams.
+
+  ### Cybercrime Investigator
+
+  Front-line for the detection and remediation of security incidents.
+  * Security proficiency level:  Med to High
+  * Primary skills needed
+    * Computer forensics
+    * Able to tune a SIEM, IDS/IPS
+
+  The initial person for this role will need to be capable of identifying new data sources and onboarding them.  Will need to build/manage the Cyber (Threat) Intelligence program.
+
+  The initial person for this role will additionally need to be able to correlate regulatory guidance in order to write security policy, standards, guidance and generate requirements.
+
+  ### Software Developer
+
+...
