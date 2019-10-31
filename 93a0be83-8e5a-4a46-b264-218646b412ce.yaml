@@ -5,6 +5,7 @@ type: "guidance" # Options: [regulation|policy|standard|guidance|requirement|con
 title: "Blank template"
 shortDescription: !
 source: !
+classification: "public" # Options: [public|private|confidential]
 referenceTag: # Reserved keys:  'parent', 'peer', and 'child'
   - parent: "ad9c7149-fa91-4e62-a86b-fdc4387840d1"
 status: # this section is to provide some automatic documentation management
