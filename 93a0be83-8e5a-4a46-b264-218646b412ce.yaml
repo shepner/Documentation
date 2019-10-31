@@ -12,7 +12,7 @@ status: # this section is to provide some automatic documentation management
   - "review" # Options: [draft|review|complete|expire]
   - effective: 201910
   - expire: !
-revision: # who did what when.  Keep it short and useful
+revision:
   - date: "20191031"
     name: "Stephen Hepner"
     reason: "Initial draft"
