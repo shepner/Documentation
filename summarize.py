@@ -31,6 +31,8 @@ Scrapers ([StackOverflow - Difference between BeautifulSoup and Scrapy crawler?]
 
 Note: I listed these in the order of preference for this particular use (without too much research into the matter)
 
+## Notes
+
 To assist with this, the GitHub [API](https://developer.github.com/v3/) can [list the repo contents](https://developer.github.com/v3/repos/contents/)
 
 However this would be easier (https://developer.github.com/v3/repos/contents/#get-contents):
@@ -51,7 +53,8 @@ https://raw.githubusercontent.com/shepner/Documentation/master/1e7c647e-93d7-455
 
 
 #read contents of repo
-#from https://github.com/datasciencedojo/tutorials/blob/master/Web%20Scraping%20with%20Python%20and%20BeautifulSoup/Web%20Scraping%20with%20Python%20and%20Beautiful%20Soup.py
+
+#initial example code from [here](https://github.com/datasciencedojo/tutorials/blob/master/Web%20Scraping%20with%20Python%20and%20BeautifulSoup/Web%20Scraping%20with%20Python%20and%20Beautiful%20Soup.py)
 
 from bs4 import BeautifulSoup as soup  # HTML data structure
 from urllib.request import urlopen as uReq  # Web client
