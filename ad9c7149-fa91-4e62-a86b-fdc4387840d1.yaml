@@ -15,6 +15,7 @@ type: "procedure" # Options: [regulation|policy|standard|guidance|requirement|co
 title: "Documentation management"
 shortDescription: "Specification for file format and management"
 #source: "https://domain.com/some/url/here" # needed if this material came from somewhere else
+classification: "public" # Options: [public|private|confidential]
 #referenceTag: # Reserved keys:  'parent', 'peer', and 'child'
   # this section is used to link to other documents
   # 0 - N tags/keys may be used and tags may have 0 - N values
