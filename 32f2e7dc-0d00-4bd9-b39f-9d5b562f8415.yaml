@@ -8,7 +8,7 @@ source: "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
 classification: "public" # Options: [public|private|confidential]
 referenceTag:
   - "PCI":
-    - "PCI DSS v3.2.1"
+    - "PCI DSS v3.2.1":
       - "1.1.1"
   - parent: "cd498dae-9287-4432-91a3-97adf1ea4dd6"
 status:
