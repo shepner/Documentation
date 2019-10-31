@@ -1,0 +1,22 @@
+%YAML 1.2
+---
+id: "ad9c7149-fa91-4e62-a86b-fdc4387840d1" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+type: "guidance" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+title: "Blank template"
+shortDescription: !
+source: !
+referenceTag: # Reserved keys:  'parent', 'peer', and 'child'
+  - parent: "ad9c7149-fa91-4e62-a86b-fdc4387840d1"
+status: # this section is to provide some automatic documentation management
+  - "review" # Options: [draft|review|complete|expire]
+  - effective: 201910
+  - expire: !
+revision: # who did what when.  Keep it short and useful
+  - date: "20191031"
+    name: "Stephen Hepner"
+    reason: "Initial draft"
+documentBody: |
+  # Blank template
+
+  This is the document body which uses MD format
+...
