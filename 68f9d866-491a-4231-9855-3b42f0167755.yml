@@ -4,6 +4,7 @@ id: "68f9d866-491a-4231-9855-3b42f0167755"
 type: guidance
 title: "Cybersecurity Strategy"
 shortDescription: "High-level approach to cybersecurity"
+classification: "public" # Options: [public|private|confidential]
 referenceTag:
   #- parent: 
   #- peer:
