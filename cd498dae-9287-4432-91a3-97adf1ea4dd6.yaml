@@ -5,6 +5,7 @@ type: "regulation"
 title: "Requirement 1.1"
 shortDescription: "Establish and implement firewall and router configuration standards"
 source: "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
+classification: "public" # Options: [public|private|confidential]
 referenceTag:
   - "PCI":
     - "PCI DSS v3.2.1"
