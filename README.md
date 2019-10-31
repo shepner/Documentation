@@ -2,6 +2,7 @@
 
 Guidance
 * [Documentation spec](https://github.com/shepner/Documentation/blob/master/ad9c7149-fa91-4e62-a86b-fdc4387840d1.yaml): Specification for file format and management
+  - [Blank template](https://github.com/shepner/Documentation/blob/master/93a0be83-8e5a-4a46-b264-218646b412ce.yaml)
 
 Procedure
 * [Cybersecurity Strategy](https://github.com/shepner/Documentation/blob/master/68f9d866-491a-4231-9855-3b42f0167755.yml): High-level approach to cybersecurity
