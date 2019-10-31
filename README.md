@@ -1,6 +1,7 @@
 # Documentation
 
 Guidance
+* [Recruiting](https://github.com/shepner/Documentation/blob/master/4a4d6ec7-4cce-45f8-aa79-df1764058818/4a4d6ec7-4cce-45f8-aa79-df1764058818.yaml): What to look for when recruiting
 * [Security stance](https://github.com/shepner/Documentation/blob/master/4480c89d-1da0-4f18-9f8b-f0238333e69a.yaml): Discussion about what premise to use for the security model
 * [Documentation spec](https://github.com/shepner/Documentation/blob/master/ad9c7149-fa91-4e62-a86b-fdc4387840d1.yaml): Specification for file format and management
   - [Blank template](https://github.com/shepner/Documentation/blob/master/93a0be83-8e5a-4a46-b264-218646b412ce.yaml)
