@@ -19,22 +19,19 @@ revision:
 documentBody: |
   Here are some thoughts about what I am looking for in an employee and how to find them.
   
-  In a nutshell, I look for people who are, in no particular order: friendly, motivated, assertive, and compentent.
+  In a nutshell, I look for people who are, in no particular order: friendly, motivated, assertive, and compentent.  Being able to think programatically is a definiate plus
   
-  There was a nice article by [Robert Glazer](https://www.linkedin.com/in/glazer/) titled "[How You Manage These 2 Kinds of Employees Will Define Your Company's Culture](https://www.linkedin.com/pulse/how-you-manage-2-kinds-employees-define-your-companys-robert-glazer/)".  In there, he provided the following graph:
+  There was a nice article by [Robert Glazer](https://www.linkedin.com/in/glazer/) titled "[How You Manage These 2 Kinds of Employees Will Define Your Company's Culture](https://www.linkedin.com/pulse/how-you-manage-2-kinds-employees-define-your-companys-robert-glazer/)".  In there, he provided the following graph:  ![Nice versus Competent two-by-two matrix](graph.jpg)
   
+  The traits I am looking for are factors of the upper right quadrent.  I am fine with those who cross (somewhat) into the lower right but not with those who upper left.  That is to say, I can work with someone who is a little rough around the edges but not with one who doesnt do anything.
   
+  The job postings are to have a link back to this body of documentation.  Filter out anyone who has obviously not read the documentation during the pre-screen interview.  (HINT if you have read this far, **mention** that fact!)
+  
+  For those who *have* read the documentation, I want to know about those who are highly motivated about what is said or implied and can articulate how (and why) they thing they can contribute.  This is not limited to just Security but obviously that is the goal.  Points for going above and beyond with this part.  
 
-  To help select candidates, in the posting point them to these documents. In pre-screen, filter out those who have not read.   (You have my attention If you are reading this).  Then filter out those who are not highly motivated by what is said or implied  (this isn’t nessessarially just  the security implications either.  But it helps)
+  While it certainly helps, there is no requirement for a security background for the right candidate.  However, it is expected that they will put in the effort to get up to speed.  This would pridominately be via lots of Q&A, hard work, lots of reading, and mentoring.  The definitions for the various security knowledge levels are documented elsewhere.  The knowledge level required for each position is also documented elsewhere.
 
-  And can articulate how(and why) they think they can contribute 
-
-  Group leads are to expected to have high level of security knowledge as term of employment even if they start with none. There must be a willingness to quickly put in the work to learn.   At a min, this will involve reading and understanding all of the regulations . Note that understanding is not the same as just working in an environment covered by the regulation
-
-  There must be a fundamental agreement with the security model,  management style, and desired culture otherwise no one will be happy. Be prepared to speak to those points 
-
-  If you haven’t been scared off yet and find this all this intreaging, motivating, etc then there is a good chance I want to work with you
-
-  Must be able to think programmatically
-
+  There is a general expectation that everyone has a fundamental agreement with the security model, the management style, and desired culture because otherwise no one will be happy with the results.  Candidates should be prepared to speak to those points.
+  
+  I likely would be interested in anyone who has gotten this far and has not been scared off by this, as well as finds this intreaging/motivating/etc.
 ...
