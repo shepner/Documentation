@@ -27,6 +27,7 @@ documentBody: |
   ### Security Architecture
   
   Responsible for:
+  
   * Creation of security architectural patterns
   * Determination of what types of tools are needed and their priority
   * Security policy/standard/guidance/requirements/controls
@@ -39,8 +40,9 @@ documentBody: |
   ### Security Intelligence
   
   Responsible for:
-  * Collection, management and dissemination of Cyber Security Intelligence* 
-    (*This is not just limited to threat intel)
+  
+  * Collection, management and dissemination of Cyber Security Intelligence
+    (*This is not just limited to threat intel*)
   * Detection, management, and remediation of cyber threats
   * Tuning detection tools
   * Education - awareness, risks, etc
@@ -50,6 +52,7 @@ documentBody: |
   ### Security Operations
   
   Responsible for:
+  
   * DevSecOps
   * Selection of vendors for tools based upon provided criteria
   * Development of tools or automation needed in the support of the security program
@@ -64,6 +67,7 @@ documentBody: |
   ### Security Vulnerability Management
   
   Responsible for:
+  
   * All levels and forms of security testing
     * Education - phishing campaigns, etc
   * Management and remediation of all security vulnerabilities/bugs/defects and their sources which includes:
@@ -79,6 +83,7 @@ documentBody: |
   ## Group structure
 
   This uses “[...] the [X-team strategy](http://mitsloan.mit.edu/newsroom/newsbriefs-0605-ancona.php) advocated by MIT professor Deborah Ancona, who defines three tiers of team members: core, operational, and outer. The core consists of executives responsible for strategy. The operational group leads and makes decisions about day-to-day work but doesn’t tackle the larger issues handled by the core. And the outer network consists of temporary or part-time members who are brought in for a particular stage of the project because of their specialized expertise. (From: [hbr.org - Getting Virtual Teams Right](https://hbr.org/2014/12/getting-virtual-teams-right))
+  
   * Core:  Security management and leads
   * Operational:  Security team members
   * Outer:  Consultants
@@ -91,6 +96,7 @@ documentBody: |
 
   ## Organization chart
   CISO
+  
   * ERC Manager
   * Security Manager
     * Group: Security Architecture
@@ -113,20 +119,24 @@ documentBody: |
   ## Possible Roles per Group
   
   Security Architecture
+  
     * Cybersecurity Architect
     * Cybersecurity Analyst
   
   Security Operations
+  
     * Cybersecurity Engineer
     * Cybersecurity Analyst
     * Software Developer
   
   Security Incident Management
+  
     * Cybercrime Investigator
     * Cybersecurity Analyst
     * Software Developer
   
   Security Vulnerability Management
+  
     * Cybersecurity Analyst
     * Software Developer
 
@@ -135,18 +145,21 @@ documentBody: |
   ### Cybersecurity Analyst
   
   Will be responsible for managing the resolution of defects that are uncovered
+  
   * Security proficiency level:  Med (general)
   * Primary skills needed
   
   ### Cybersecurity Architect
   
   Will be responsible for tracking down all new and existing applications.  Determine if each is compliant with requirements.  Generate/maintain threat models.
+  
   * Security proficiency level:  High
   * Primary skills needed
   
   ### Cybersecurity Engineer
   
   Build, configure, support the security tools
+  
   * Security proficiency level:  Med to High
   * Primary skills needed
     * UNIX
@@ -159,6 +172,7 @@ documentBody: |
   ### Cybercrime Investigator
 
   Front-line for the detection and remediation of security incidents.
+  
   * Security proficiency level:  Med to High
   * Primary skills needed
     * Computer forensics
@@ -170,7 +184,9 @@ documentBody: |
 
   ### Software Developer
 
-  # Appendix A - Security industry career roles (From: [Infosec Institute - Cybersecurity career paths (Overview)](https://resources.infosecinstitute.com/cybersecurity-career-paths-overview))
+  # Appendix A - Security industry career roles
+  
+  (From: [Infosec Institute - Cybersecurity career paths (Overview)](https://resources.infosecinstitute.com/cybersecurity-career-paths-overview))
   
   ## Incident Analyst
   
@@ -179,6 +195,7 @@ documentBody: |
   Due to the sensitive information they handle, many incident analysts need to obtain a security clearance. Incident analysts rely on a wide array of computer forensic tools to do their jobs, so a background in computer forensics or computer investigations is key to springboarding into this career.
   
   Other common job titles for incident analysts are:
+  
   * Information security project manager
   * Security project manager
   * Senior analyst, information security
@@ -190,6 +207,7 @@ documentBody: |
   Common responsibilities include recovering sensitive information from devices used by criminals, retrieving evidence for prosecuting crimes, working alongside law enforcement officers and testifying in court.
   
   Depending on where they work, you may see cybercrime analysts called any of the following titles:
+  
   * Digital forensics analyst
   * Cyber-IT/forensic/security incident responder
   * Cyberforensics analyst
@@ -201,6 +219,7 @@ documentBody: |
   Cybersecurity specialists play an important role in securitizing a company’s computer information systems. Using a highly specialized skill set, they offer invaluable protection against an arsenal of threats including malware, viruses, phishing and denial-of-service attacks.
 
   Other common job titles for cybersecurity specialists include:
+  
   * Information security specialist
   * IT specialist, information security
   * Information technology specialist — information security
@@ -211,6 +230,7 @@ documentBody: |
   Cybersecurity analyst is an entry-level job in cybersecurity and a popular option for newcomers to the field. Being successful in this role means balancing strong analytical skills with creativity and a natural knack for solving problems. Day to day, [cybersecurity analysts](https://www.labormarketinfo.edd.ca.gov/OccGuides/Detail.aspx?Soccode=151122&Geography=0601000000) may do things like encrypting data transmissions, performing risk assessments, erecting firewalls and protecting sensitive information.
 
   At some companies, the job title for cybersecurity analysts may vary based on the specific job duties. Here are the most common titles:
+  
   * Information security analyst
   * Security analyst
   * IT security analyst
@@ -223,6 +243,7 @@ documentBody: |
   Interestingly, cybersecurity consultants often to get to play the roles of both attacker and victim. [According to Infosec](https://resources.infosecinstitute.com/cyberseek-career-path-cybersecurity-consultant/#gref), “they can work on both the Red and Blue Teams and offer their insight to the organization as to how they can better protect themselves from looming cyberthreats. They can also be found working very closely with threat-hunting, incident response and even forensic investigation teams as well.”
 
   Cybersecurity consultants also work under the following job titles:
+  
   * Security consultant
   * Security specialist
   * Commercial security consultant
@@ -233,6 +254,7 @@ documentBody: |
   Penetration testers are the cybersecurity world’s “ethical hackers.” Your job is to run simulated attacks against corporate security systems in order to find any gaps before real hackers uncover and exploit them. When you discover a weakness, you share it with the team and help brew up ideas for strengthening the system. Pentesters are needed almost everywhere, so you can find plenty of job opportunities in-house at companies or, if you prefer, freelancing on your own.
 
   Penetration testers are also sometimes called:
+  
   * Ethical hacker
   * Assurance validator
 
@@ -241,6 +263,7 @@ documentBody: |
   [Cybersecurity Architects](https://resources.infosecinstitute.com/category/cybersecurity-careers/how-to-become-a-cybersecurity-architect/) are corporate leaders with the mindset of a hacker. They’re largely responsible for building and maintaining corporate security structures to thwart potential attacks. As experienced leaders in the field, they also supervise security teams of more junior employees.
 
   At some companies, cybersecurity architects may go by other job titles, including:
+  
   * Security architect
   * Information security architect
   * Senior security architect
@@ -251,6 +274,7 @@ documentBody: |
   [Cybersecurity engineers](https://resources.infosecinstitute.com/category/cybersecurity-careers/how-to-become-a-cybersecurity-engineer/) are highly skilled, detail-oriented professionals on the front lines of protecting a company from security breaches. Their daily responsibilities often include analyzing computer networks, ensuring networks are running securely and anticipating security issues that may come up in the future. The core of their role involves designing computer systems that can withstand major disruptions like malicious cyberattacks or even natural disasters.
 
   Other common job titles for cybersecurity engineers include:
+  
   * Security engineer
   * Network security engineer
   * Data security engineer
