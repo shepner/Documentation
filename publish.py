@@ -34,6 +34,7 @@ write all files to destination
 #sudo apt install pandoc
 #sudo apt install texlive-latex-recommended
 
+#################################################
 URL='https://raw.githubusercontent.com/shepner/Documentation/master/c54c285f-eeb4-4a42-815f-9ea0656265e2.yaml'
 
 #read .yaml file
@@ -47,6 +48,7 @@ r = requests.get(URL)
 #r.json()
 #r.content  #this is the body of the page
 
+#################################################
 #parse the YAML contents
 import yaml
 
@@ -57,38 +59,46 @@ content = yaml.load(r.content, Loader=yaml.FullLoader)
 #for item, value in content.items():
 #    print(item, ":", value)
 
+#################################################
 #Structure the page and write it to a file
 f = open(content['id']+'.md', 'w')  #open a file for output
 
 print ("<title>",content['title'],"</title>", file=f)
 
-print ("\n---\n", file=f)
+#print ("\n---\n", file=f)
 
 print (content['documentBody'], file=f)
 
 print ("\n---\n", file=f)
 
-#print the revisions as a table in HTML because it isnt supported by CommonMark
+print ("# Revision history", file=f)
+#print the revisions as a table in HTML because CommonMark doesnt do that
+print ("<style>", file=f)
+print ("table { border-collapse: collapse; width: 100%; }", file=f)
+print ("td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }", file=f)
+print ("</style>", file=f)
+
 print ("<table>", file=f)
-print ("  <tr>", file=f)
-print ("    <th>Date</th>", file=f)
-print ("    <th>Name</th>", file=f)
-print ("    <th>Reason</th>", file=f)
-print ("  </tr>", file=f)
+print ("<tr>", file=f)
+print ("<th>Date</th>", file=f)
+print ("<th>Name</th>", file=f)
+print ("<th>Reason</th>", file=f)
+print ("</tr>", file=f)
 #the 'revisions' key consists of a list of sets
 #`content['revision'][0]['date']` will provide that specific data element
 for element in content['revision']:  #step through the list elements
-    print ("  <tr>", file=f)
+    print ("<tr>", file=f)
     #now print the fields
-    print ("    <td>",element['date'],"</td>", file=f)
-    print ("    <td>",element['name'],"</td>", file=f)
-    print ("    <td>",element['reason'],"</td>", file=f)
-    print ("  </tr>", file=f)
+    print ("<td>",element['date'],"</td>", file=f)
+    print ("<td>",element['name'],"</td>", file=f)
+    print ("<td>",element['reason'],"</td>", file=f)
+    print ("</tr>", file=f)
 print ("</table>", file=f)
 
 f.close()  #close the file
 
+#################################################
 #convert the CommonMark file into other formats
 import subprocess
-subprocess.run(['pandoc', content['id']+'.md', "-o", content['id']+'.html'])
+subprocess.run(['pandoc', content['id']+'.md', '--html-q-tags', '-s', '-o', content['id']+'.html'])
 #subprocess.run(['pandoc', content['id']+'.md', "-o", content['id']+'.pdf']) #this is generating errors
