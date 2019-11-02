@@ -41,6 +41,9 @@ revision: # who did what when.  Keep it short and useful
   - date: "20191030" # This is a string, not an integer!
     name: "Stephen Hepner"
     reason: "restructure of header section"
+  - date: "20191102" # This is a string, not an integer!
+    name: "Stephen Hepner"
+    reason: "missed some footnotes"
 
 ### Document
 # "documentBody" contains the body of the document
