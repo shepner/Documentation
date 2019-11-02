@@ -84,6 +84,9 @@ documentBody: | # No more YAML comments after this point
   Evaluation of the file starts with parsing the YAML followed by parsing the CommonMark (Markdown) within the values.
 
   See the [source]() of this file for the layout
+  [YAML Standard](https://yaml.org/)
+  [CommonMark](https://commonmark.org/help/) (Markdown) [specification](https://spec.commonmark.org/current/): There are many specs ([Wikipedia discussion](https://en.wikipedia.org/wiki/Markdown)) but this is closest to a standard
+  [lipsum.com - Lorem Ipsum generator](https://lipsum.com/)
   
   This is an example of how the files could be organized via a config file when it is not practical or desired to let the documents self-organize.
 
