@@ -13,7 +13,7 @@
 id: "ad9c7149-fa91-4e62-a86b-fdc4387840d1" # [UUIDv4 generator](https://www.uuidgenerator.net/)
 title: "Documentation management"
 shortDescription: "Specification for file format and management" # rename to 'subtitle'
-#author: !
+#author: ! # one person per value
 #description: !
 lang: en # [BCP47 language subtag lookup](https://r12a.github.io/app-subtags/)
 #source: "https://domain.com/some/url/here" # needed if this material came from somewhere else
