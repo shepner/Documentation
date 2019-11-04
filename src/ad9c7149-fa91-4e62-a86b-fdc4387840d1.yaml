@@ -47,8 +47,19 @@ revision: # who did what when.  Keep it short and useful
 
 ### Document
 # "documentBody" contains the body of the document
+#
 # Use CommonMark (Markdown) here as needed
+# All content is to assume it is a self-contained document.  Header levels should always start at H1
+#
 # See [Example 5.7. Block Scalar Indicators](https://yaml.org/spec/1.2/spec.html#id2772075) for '|' (literal) vs '>' (folded).  Sorry, cant use [anchors](https://yaml.org/spec/1.2/spec.html#id2785586) with these
+#
+# If `documentBody` just contains a single value, it will be considered to be MD content
+#
+# If `documentBody` contains a structure, the values will be handled as follows:
+#   `"file": *.yaml`:  Will be parsed as a YAML file and converted to MD
+#   `"file": *.md`:  Will be treated as a MarkDown (CommonMark) file
+#   `"content": *`: Will be treated as MarkDown (CommonMark)
+# In all cases, the content will be concatenated together in the order listed using the hiearchy presented.  Headers will be offset according to the YAML structure
 
 documentBody: | # No more YAML comments after this point
   # Documentation management
