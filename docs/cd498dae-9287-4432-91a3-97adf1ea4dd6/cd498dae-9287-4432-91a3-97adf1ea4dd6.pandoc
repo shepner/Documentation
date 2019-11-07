@@ -1,0 +1,42 @@
+% Requirement 1.1
+% 20191030
+
+---
+"title": "Requirement 1.1"
+...
+
+# PCI DSS Requirements
+
+**1.1** Establish and implement firewall and router configuration standards that include the following:
+
+# Testing Procedures
+
+**1.1** Inspect the firewall and router configuration standards and other documentation specified below and verify that standards are complete and implemented as follows:
+
+# Guidance
+
+Firewalls and routers are key components of the architecture that controls entry to and exit from the network. These devices are software or hardware devices that block unwanted access and manage authorized access into and out of the network.
+
+Configuration standards and procedures will help to ensure that the organization’s first line of defense in the protection of its data remains strong.
+
+---
+
+# Revision history
+
+<style>
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+</style>
+
+<table>
+<tr>
+<th>Date</th>
+<th>Name</th>
+<th>Reason</th>
+</tr>
+<tr>
+<td>20191030</td>
+<td>Stephen Hepner</td>
+<td>Current version of PCI DSS</td>
+</tr>
+</table>

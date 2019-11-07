@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="20191102">
+  <title>Documentation management</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Documentation management</h1>
+<p class="author">20191102</p>
+</header>
+<h1 id="documentation-management">Documentation management</h1>
+<p>The purpose of this is to determine how the documentation will be managed. Security Policy, Standards, Controls, Requirements, etc, etc, etc represent a huge body of text. All of which needs to be managed, maintained, cross referenced, etc.</p>
+<p>This document is the template for how this will be performed using plain ASCII text files, structured using YAML, and formatted with Markdown.</p>
+<p>Ideally, all documentation would use this methodology at its core</p>
+<p>There are multiple advantages to this approach: No vendor lock-in: In particular, everything is stored in a simple easy to understand human readable format which can be implemented with a number of cheap or free solutions. All documentation is data: While that technically has always been the case, the use of YAML enforces that. Compiling documentation: Much like compiling code, this permits interacting with the documentation in interesting ways such as having a simple script which can pull out all of the relevant standards, provide references to <em>why</em> they are there (ie link back to the audit finding, regulatory control, etc) and output the whole thing in whatever format (PDF, spreadsheet, etc) the customer finds useful.</p>
+<h2 id="storage">Storage</h2>
+<p>All files will be stored in a single github repo. This will provide the needed revision history. This also permits branch control. Also, each file has a unique URL which will greatly aid in further unforseen possibilities.</p>
+<h2 id="file-naming">File naming</h2>
+<p>Ideally, the name of the file would be the contents of the ID field. As these are YAML spec files, the extension <code>.yaml</code> is to be used. In the event the mechanism storing the files does not have revision control, the full filename would be <code>&lt;ID&gt;_&lt;Revision Date&gt;.yaml</code>.</p>
+<h2 id="publishing">Publishing</h2>
+<p>It should be noted that this naming scheme is absolutely unhelpful for the human who wants to do anything with the files. To solve this problem, a table of contents is to be generated whenever there is a change to the body of information.</p>
+<p>When using a repository tool with the concept of branches, it would be possible to create an “official policy branch” or the like. If this is not available, or if it proves too difficult, this would have to be controlled by YAML config files to handle these groupings.</p>
+<p>The YAML config files are also needed for the output to have a sensible order. Without this, the resulting document will have all of the relevant data but randomly dispersed throughout with no logical order in that section. This could be done by explicitly setting the order (ie File A first, File C second, File B third) but ideally, this order would be managed automatically by the information contained within the files themselves.</p>
+<h2 id="file-format">File format</h2>
+<p>This is how the files would be formatted. Fields may be removed if not needed.</p>
+<p>Evaluation of the file starts with parsing the YAML followed by parsing the CommonMark (Markdown) within the values.</p>
+<p>See the <a href="">source</a> of this file for the layout <a href="https://yaml.org/">YAML Standard</a> <a href="https://commonmark.org/help/">CommonMark</a> (Markdown) <a href="https://spec.commonmark.org/current/">specification</a>: There are many specs (<a href="https://en.wikipedia.org/wiki/Markdown">Wikipedia discussion</a>) but this is closest to a standard <a href="https://lipsum.com/">lipsum.com - Lorem Ipsum generator</a></p>
+<p>This is an example of how the files could be organized via a config file when it is not practical or desired to let the documents self-organize.</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">%YAML 1.2</span>
+<span class="ot">---</span>
+<span class="fu">document:</span>
+  <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Access Control Standard&quot;</span>
+  <span class="fu">contents:</span>
+    <span class="co"># Think table of contents.  Note that</span>
+    <span class="co"># The contents, when listed, fix the order of the referenced documents.</span>
+    <span class="co"># Otherwise, they will just be added together randomly.</span>
+    <span class="kw">-</span> “ba270852-d31b-4abf-9984-2a8a2d22e12f”
+    <span class="kw">-</span> “0cdb8583-8b88-47e3-af04-11c05f1ef7f5”
+    <span class="kw">-</span> “94633263-bf0f-40a5-a88b-d5ec814b0ab7”
+<span class="co">...</span>
+<span class="co">%YAML 1.2</span>
+<span class="co">---</span>
+<span class="co">document:</span>
+<span class="co">  title: &quot;All the Security Policies and Standards&quot;</span>
+<span class="co">  contents: # list the Policy documents before the Standard documents</span>
+<span class="co">    # this is also perfectly fine (provided the YAML is correct)</span>
+<span class="co">    type: Policy  #want fixed order output</span>
+<span class="co">      - “52d05e9f-2af9-4a5d-8d9f-0ba5e9158c30”</span>
+<span class="co">      - “f0201539-7594-4f71-894f-6b20ab7725b6”</span>
+<span class="co">      - “987b4050-f867-4624-ad1f-8cb32d6fb531”</span>
+<span class="co">      - “589ccbb2-b074-4773-909e-10be26aef46b”</span>
+<span class="co">    type: Standard  # dont care about the order of the output for this section</span>
+<span class="co">...</span></code></pre></div>
+<h3 id="references">References:</h3>
+<ul>
+<li>https://www.codeproject.com/Tips/5248463/Building-YAML-Flavored-Markdown-with-EPS-Extension</li>
+<li>https://jmduke.com/2015/11/09/embedding-markdown-in-yaml</li>
+<li>https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/</li>
+<li>https://github.com/dotnet/csharplang/issues/878</li>
+<li>https://pandoc.org/</li>
+<li>https://stackoverflow.com/questions/21247978/compile-multiple-files-into-one-with-title-blocks</li>
+<li>https://docs.getpelican.com/en/stable/content.html</li>
+<li><p>https://d.moonfire.us/blog/2016/10/31/writing-with-markdown/</p></li>
+<li>https://codebeautify.org/yaml-validator</li>
+<li><p>https://yaml-online-parser.appspot.com/</p></li>
+</ul>
+<hr />
+<h1 id="revision-history">Revision history</h1>
+<style>
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+</style>
+<table>
+<tr>
+<th>
+Date
+</th>
+<th>
+Name
+</th>
+<th>
+Reason
+</th>
+</tr>
+<tr>
+<td>
+20191029
+</td>
+<td>
+Stephen Hepner
+</td>
+<td>
+Initial draft
+</td>
+</tr>
+<tr>
+<td>
+20191030
+</td>
+<td>
+Stephen Hepner
+</td>
+<td>
+restructure of header section
+</td>
+</tr>
+<tr>
+<td>
+20191102
+</td>
+<td>
+Stephen Hepner
+</td>
+<td>
+missed some footnotes
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="20191031">
+  <title>Security stance</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Security stance</h1>
+<p class="author">20191031</p>
+</header>
+<p>Going to play a game of chicken with you Let’s see who is going to flinch first</p>
+<p>Two extremes of security: Completely closed &lt;—&gt; completely open</p>
+<p>With completely closed, I can let my little paranoid heart run free. And this is , to a point, easier. Military, financial institutions and the like will be on this end of the spectrum</p>
+<p>With completely open, there are NO SECRETS. Everything is on the internet. BYOD. Open Source it all. This is the modern ideal.</p>
+<p>I am prepared to go in the direction of that ideal but there is a limit for the default: Zero trust</p>
+<p>The funny thing about the zero trust model is that you must trust a great deal which means the first exception would be: Fail closed by default. Explicitly allow.</p>
+<p>However that is still too extreme in certain circumstances which would require: fail open by default. Explicitly deny</p>
+<p>Finally, even that is too extreme and there will be, possibly many, times this will be needed: permit all</p>
+<p>How to determine what gets which? To do that, we first need to define Data Classifications to each of these models. Second, we need to apply those classifications to, everything.</p>
+<p>The assignment of those classifications is where the game of chicken comes in not to mention what the regulations have to say. So, no you can’t post credit cards along with their owners medical records on the internet for all to see. But there is no reason why you can’t do things like BYOD.</p>
+<p>Trick to being able to do this is to decide this early at the beginning. Architect it into everything from the get go. There is no way to bolt this on after the fact. Attempting to do so will only result in something on the other (closed) extreme, endless issues, unhappy people, and probable data breaches.</p>
+<p>When are you going to flinch?</p>
+<hr />
+<h1 id="revision-history">Revision history</h1>
+<style>
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+</style>
+<table>
+<tr>
+<th>
+Date
+</th>
+<th>
+Name
+</th>
+<th>
+Reason
+</th>
+</tr>
+<tr>
+<td>
+20191031
+</td>
+<td>
+Stephen Hepner
+</td>
+<td>
+Initial draft
+</td>
+</tr>
+</table>
+</body>
+</html>
