@@ -1,8 +1,12 @@
 % Requirement 1.1
-% 20191030
+% Stephen Hepner
+% 20191107
 
 ---
 "title": "Requirement 1.1"
+"author": "Stephen Hepner"
+"abstract": "Establish and implement firewall and router configuration standards"
+"lang": "en"
 ...
 
 # PCI DSS Requirements
@@ -38,5 +42,10 @@ td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
 <td>20191030</td>
 <td>Stephen Hepner</td>
 <td>Current version of PCI DSS</td>
+</tr>
+<tr>
+<td>20191107</td>
+<td>Stephen Hepner</td>
+<td>Updated header format</td>
 </tr>
 </table>

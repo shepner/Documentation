@@ -1,8 +1,11 @@
 % Documentation management
-% 20191102
+% Stephen Hepner
+% 20191107
 
 ---
 "title": "Documentation management"
+"author": "Stephen Hepner"
+"abstract": "Specification for file format and management"
 "lang": "en"
 ...
 
@@ -119,5 +122,10 @@ td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
 <td>20191102</td>
 <td>Stephen Hepner</td>
 <td>missed some footnotes</td>
+</tr>
+<tr>
+<td>20191107</td>
+<td>Stephen Hepner</td>
+<td>changes to the header format</td>
 </tr>
 </table>

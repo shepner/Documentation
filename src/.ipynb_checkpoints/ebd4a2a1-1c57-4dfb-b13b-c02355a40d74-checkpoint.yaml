@@ -1,24 +1,33 @@
 %YAML 1.2
 ---
-id: "ebd4a2a1-1c57-4dfb-b13b-c02355a40d74"
-type: "regulation"
+id: "ebd4a2a1-1c57-4dfb-b13b-c02355a40d74" # [UUIDv4 generator](https://www.uuidgenerator.net/)
 title: "Requirement 1"
-shortDescription: "Install and maintain a firewall configuration to protect cardholder data"
+subtitle: !
+author: "Stephen Hepner" #who wrote the document
+abstract: "Install and maintain a firewall configuration to protect cardholder data"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
 source: "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
 classification: "public" # Options: [public|private|confidential]
 referenceTag:
-  - "PCI":
-    - "PCI DSS v3.2.1":
-      - "1"
-status:
-  - "complete" # Options: [draft|review|complete|expire]
-  - effective: 201805
-  - expire: !
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "1"
+  relationship: # `ID : [parent|peer|child]`
+    "ad9c7149-fa91-4e62-a86b-fdc4387840d1": "parent"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
 revision:
   - date: "20191030"
     name: "Stephen Hepner"
     reason: "Current version of PCI DSS"
-documentBody: |
+  - date: "20191107"
+    name: "Stephen Hepner"
+    reason: "Updated header format"
+body: |
   # Requirement 1: Install and maintain a firewall configuration to protect cardholder data
 
   Firewalls are devices that control computer traffic allowed between an entity’s networks (internal) and untrusted networks (external), as well as traffic into and out of more sensitive areas within an entity’s internal trusted networks. The cardholder data environment is an example of a more sensitive area within an entity’s trusted network.

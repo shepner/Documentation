@@ -1,8 +1,12 @@
 % Security stance
-% 20191031
+% Stephen Hepner
+% 20191107
 
 ---
 "title": "Security stance"
+"author": "Stephen Hepner"
+"abstract": "Discussion about what premise to use for the security model"
+"lang": "en"
 ...
 
 Going to play a game of chicken with you   Let’s see who is going to flinch first 
@@ -49,5 +53,10 @@ td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
 <td>20191031</td>
 <td>Stephen Hepner</td>
 <td>Initial draft</td>
+</tr>
+<tr>
+<td>20191107</td>
+<td>Stephen Hepner</td>
+<td>Updated header format</td>
 </tr>
 </table>

@@ -1,13 +1,16 @@
 % Blank template
-% 20191031
+% Stephen Hepner
+% 20191107
 
 ---
 "title": "Blank template"
+"author": "Stephen Hepner"
+"lang": "en"
 ...
 
 # Blank template
 
-This is the document body which uses MD format
+This is the document's body
 
 ---
 
@@ -25,8 +28,8 @@ td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
 <th>Reason</th>
 </tr>
 <tr>
-<td>20191031</td>
+<td>20191107</td>
 <td>Stephen Hepner</td>
-<td>Initial draft</td>
+<td>put a reason here</td>
 </tr>
 </table>

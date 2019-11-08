@@ -1,25 +1,33 @@
 %YAML 1.2
 ---
-id: "1e7c647e-93d7-455d-b5a5-fd7205ca1b14"
-type: "regulation"
+id: "1e7c647e-93d7-455d-b5a5-fd7205ca1b14" # [UUIDv4 generator](https://www.uuidgenerator.net/)
 title: "Requirement 1.1.2"
-shortDescription: "Maintain a network diagram"
+subtitle: !
+author: "Stephen Hepner" #who wrote the document
+abstract: "Maintain a network diagram"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
 source: "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
 classification: "public" # Options: [public|private|confidential]
 referenceTag:
-  - "PCI":
-    - "PCI DSS v3.2.1":
-      - "1.1.1"
-  - parent: "cd498dae-9287-4432-91a3-97adf1ea4dd6"
-status:
-  - "complete" # Options: [draft|review|complete|expire]
-  - effective: 201805
-  - expire: !
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "1.1.1"
+  relationship: # `ID : [parent|peer|child]`
+    "cd498dae-9287-4432-91a3-97adf1ea4dd6": "parent"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
 revision:
   - date: "20191030"
     name: "Stephen Hepner"
     reason: "Current version of PCI DSS"
-documentBody: |
+  - date: "20191107"
+    name: "Stephen Hepner"
+    reason: "Updated header format"
+body: |
   ## PCI DSS Requirements
   
   **1.1.2** Current network diagram that identifies all connections between the cardholder data environment and other networks, including any wireless networks
