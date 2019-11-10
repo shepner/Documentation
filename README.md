@@ -8,8 +8,8 @@ regulation
 procedure
 
 * [Documentation management](./src/ad9c7149-fa91-4e62-a86b-fdc4387840d1.yaml) Specification for file format and management
-* [Incident Response Plan](./src/320af541-073e-4d76-ab49-d6db5991b48b.yaml) Management of information security incidents and improvements
 * [Blank template](./src/93a0be83-8e5a-4a46-b264-218646b412ce.yaml) 
+* [Incident Response Plan](./src/320af541-073e-4d76-ab49-d6db5991b48b/320af541-073e-4d76-ab49-d6db5991b48b.yaml) 
 
 guidance
 

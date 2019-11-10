@@ -19,6 +19,8 @@ All systems must be protected from unauthorized access from untrusted networks, 
 
 Other system components may provide firewall functionality, as long as they meet the minimum requirements for firewalls as defined in Requirement 1. Where other system components are used within the cardholder data environment to provide firewall functionality, these devices must be included within the scope and assessment of Requirement 1.
 
+
+
 ---
 
 # Revision history

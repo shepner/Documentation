@@ -21,8 +21,22 @@ revision:
     name: "Stephen Hepner"
     reason: "rewrite of initial draft into this document model"
 body:
+  # it is assumes that all files are within a dir structure using this document's ID
+  # any references outside of this structure are document IDs
+  # all document IDs are UUIDv4 only
+  
+  # this structure is only contains list elements
+  # list elements may be:
+  #   list elements
+  #   yaml files: `*.yaml^` or UUIDv4
+  #   markdown files: `*.md^`
+  #   markdown text (default)
+  
+  # dont put headers within `.md` files to simplify formatting (for now)
+  # they *really* should be reduced as per the level it was in within the data tructure
 
-  - "placeholder" # H1 placeholder
+
+  - "# placeholder text here" # H1 placeholder
   
   # The structure of this is built upon the following in the indicated order:
   # 1. ISO 27002:2005
@@ -33,19 +47,21 @@ body:
   
   # ISO 27002:2005 13.2 "Management of information security incidents and improvements"
   
-  - - "mission.md" # Mission
+  #- - "mission.md" # Mission
+  - - "## Mission"
     
-    - "./ServiceCatalog.md" # Service Catalog
+    - "320af541-073e-4d76-ab49-d6db5991b48b/ServiceCatalog.md" # Service Catalog
     
-    - "./RespAndProc.md" # Responsibility and procedures
+    #- "/RespAndProc.md" # Responsibility and procedures
+    - "## Responsibility and procedures"
     
     # ISO 27002:2005 13.2.1 "Responsibility and procedures"
       # Control
         # Management responsibilities and procedures should be established to ensure a quick, effective, and orderly response to information security incidents.
         
-    - - "./OrgStructure.md" # Organizational structure
+    - - "/OrgStructure.md" # Organizational structure
     
-      - "./Procedure.md" # Procedure
+      - "/Procedure.md" # Procedure
     
       # Implementation guidance
         # In addition to reporting of information security events and weaknesses (see also 13.1), the monitoring of systems, alerts, and vulnerabilities (10.10.2) should be used to detect information security incidents. The following guidelines for information security incident management procedures should be considered:    
@@ -70,7 +86,7 @@ body:
               # * use as forensic evidence in relation to a potential breach of contract or regulatory requirement or in the event of civil or criminal proceedings, e.g. under computer misuse or data protection legislation;
               # * negotiating for compensation from software and service suppliers;
           
-      - "./Recovery.md" # Recovery
+      - "/Recovery.md" # Recovery
           
           # ISO 27002:2005 13.2.1.d
             # action to recover from security breaches and correct system failures should be carefully and formally controlled; the procedures should ensure that:
@@ -79,13 +95,13 @@ body:
               # * emergency action is reported to management and reviewed in an orderly manner;
               # * the integrity of business systems and controls is confirmed with minimal delay.
               
-      - './Escalation.md' # Escalation procedures
+      - '/Escalation.md' # Escalation procedures
 
         # The objectives for information security incident management should be agreed with management, and it should be ensured that those responsible for information security incident management understand the organization’s priorities for handling information security incidents.
       # Other information
         # Information security incidents might transcend organizational and national boundaries. To respond to such incidents there is an increasing need to coordinate response and share information about these incidents with external organizations as appropriate.
     
-    - "./Review.md" # Learning from information security incidents
+    - "/Review.md" # Learning from information security incidents
     
     # ISO 27002:2005 13.2.2 "Learning from information security incidents"
       # Control
@@ -95,9 +111,9 @@ body:
       # Other Information
         # The evaluation of information security incidents may indicate the need for enhanced or additional controls to limit the frequency, damage, and cost of future occurrences, or to be taken into account in the security policy review process (see 5.1.2).
         
-    - - "./Reporting.md" # Reporting, metrics and cyber intelligence
+    - - "/Reporting.md" # Reporting, metrics and cyber intelligence
       
-    - "./EvidenceCollection.md" # Collection of evidence
+    - "/EvidenceCollection.md" # Collection of evidence
         
     # ISO 27002:2005 13.2.3 "Collection of evidence"
       # Control
@@ -116,6 +132,6 @@ body:
         # When an information security event is first detected, it may not be obvious whether or not the event will result in court action. Therefore, the danger exists that necessary evidence is destroyed intentionally or accidentally before the seriousness of the incident is realized. It is advisable to involve a lawyer or the police early in any contemplated legal action and take advice on the evidence required.
         # Evidence may transcend organizational and/or jurisdictional boundaries. In such cases, it should be ensured that the organization is entitled to collect the required information as evidence. The requirements of different jurisdictions should also be considered to maximize chances of admission across the relevant jurisdictions.
 
-    - "./Compliance.md" # Compliance
+    - "/Compliance.md" # Compliance
 
 ...

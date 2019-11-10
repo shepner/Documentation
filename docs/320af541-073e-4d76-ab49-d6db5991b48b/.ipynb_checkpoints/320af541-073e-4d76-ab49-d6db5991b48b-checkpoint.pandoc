@@ -1,16 +1,27 @@
-% Blank template
+% Incident Response Plan
 % Stephen Hepner
 % 20191107
 
 ---
-"title": "Blank template"
+"title": "Incident Response Plan"
 "author": "Stephen Hepner"
 "lang": "en"
 ...
 
-# Blank template
+placeholder
+mission.md
+./ServiceCatalog.md
+./RespAndProc.md
+./OrgStructure.md
+./Procedure.md
+./Recovery.md
+./Escalation.md
 
-This is the document's body
+./Review.md
+./Reporting.md
+
+./EvidenceCollection.md
+./Compliance.md
 
 
 
@@ -32,6 +43,6 @@ td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
 <tr>
 <td>20191107</td>
 <td>Stephen Hepner</td>
-<td>put a reason here</td>
+<td>rewrite of initial draft into this document model</td>
 </tr>
 </table>

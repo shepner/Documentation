@@ -1,0 +1,73 @@
+% Requirement 1.1.2 % Stephen Hepner % 20191107
+
+PCI DSS Requirements
+--------------------
+
+**1.1.2** Current network diagram that identifies all connections
+between the cardholder data environment and other networks, including
+any wireless networks
+
+Testing Procedures
+------------------
+
+**1.1.2.a** Examine diagram(s) and observe network configurations to
+verify that a current network diagram exists and that it documents all
+connections to cardholder data, including any wireless networks.
+
+**1.1.2.b** Interview responsible personnel to verify that the diagram
+is kept current.
+
+Guidance
+--------
+
+Network diagrams describe how networks are configured, and identify the
+location of all network devices.
+
+Without current network diagrams, devices could be overlooked and be
+unknowingly left out of the security controls implemented for PCI DSS
+and thus be vulnerable to compromise.
+
+------------------------------------------------------------------------
+
+Revision history
+================
+
+<style>
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+</style>
+<table>
+<tr>
+<th>
+Date
+</th>
+<th>
+Name
+</th>
+<th>
+Reason
+</th>
+</tr>
+<tr>
+<td>
+20191030
+</td>
+<td>
+Stephen Hepner
+</td>
+<td>
+Current version of PCI DSS
+</td>
+</tr>
+<tr>
+<td>
+20191107
+</td>
+<td>
+Stephen Hepner
+</td>
+<td>
+Updated header format
+</td>
+</tr>
+</table>

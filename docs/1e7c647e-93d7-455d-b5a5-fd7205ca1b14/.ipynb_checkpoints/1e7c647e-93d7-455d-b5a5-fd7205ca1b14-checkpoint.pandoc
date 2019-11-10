@@ -9,6 +9,17 @@
 "lang": "en"
 ...
 
+% Requirement 1.1.2
+% Stephen Hepner
+% 20191107
+
+---
+"title": "Requirement 1.1.2"
+"author": "Stephen Hepner"
+"abstract": "Maintain a network diagram"
+"lang": "en"
+...
+
 ## PCI DSS Requirements
 
 **1.1.2** Current network diagram that identifies all connections between the cardholder data environment and other networks, including any wireless networks
@@ -24,8 +35,6 @@
 Network diagrams describe how networks are configured, and identify the location of all network devices.
 
 Without current network diagrams, devices could be overlooked and be unknowingly left out of the security controls implemented for PCI DSS and thus be vulnerable to compromise.
-
-
 
 ---
 
