@@ -1,13 +1,3 @@
-% Incident Response Plan
-% Stephen Hepner
-% 20191107
-
----
-"title": "Incident Response Plan"
-"author": "Stephen Hepner"
-"lang": "en"
-...
-
 # placeholder text here
 
 ## Mission
@@ -21,14 +11,14 @@ Generation of threat intel
 
 ## Responsibility and procedures
 
-# Organizational structure
+## Organizational structure
 
 The Security Incident Management team reports to the Manager of Cyber Security.  The team’s lead is the primary conduit for day-to-day operational needs.
 
 
-# Procedure
+## Procedure
 
-# Recovery
+## Recovery
 
 
 
@@ -36,7 +26,7 @@ The Security Incident Management team reports to the Manager of Cyber Security. 
 
 # Learning from information security incidents
 
-# Reporting, metrics and cyber intelligence
+## Reporting, metrics and cyber intelligence
 
 
 

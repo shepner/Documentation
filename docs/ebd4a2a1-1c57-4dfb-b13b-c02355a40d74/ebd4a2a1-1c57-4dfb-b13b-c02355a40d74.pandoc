@@ -1,14 +1,3 @@
-% Requirement 1
-% Stephen Hepner
-% 20191107
-
----
-"title": "Requirement 1"
-"author": "Stephen Hepner"
-"abstract": "Install and maintain a firewall configuration to protect cardholder data"
-"lang": "en"
-...
-
 # Requirement 1: Install and maintain a firewall configuration to protect cardholder data
 
 Firewalls are devices that control computer traffic allowed between an entity’s networks (internal) and untrusted networks (external), as well as traffic into and out of more sensitive areas within an entity’s internal trusted networks. The cardholder data environment is an example of a more sensitive area within an entity’s trusted network.

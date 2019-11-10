@@ -1,14 +1,3 @@
-% Requirement 1.1
-% Stephen Hepner
-% 20191107
-
----
-"title": "Requirement 1.1"
-"author": "Stephen Hepner"
-"abstract": "Establish and implement firewall and router configuration standards"
-"lang": "en"
-...
-
 # PCI DSS Requirements
 
 **1.1** Establish and implement firewall and router configuration standards that include the following:

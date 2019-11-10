@@ -1,14 +1,3 @@
-% Documentation management
-% Stephen Hepner
-% 20191107
-
----
-"title": "Documentation management"
-"author": "Stephen Hepner"
-"abstract": "Specification for file format and management"
-"lang": "en"
-...
-
 # Documentation management
 
 The purpose of this is to determine how the documentation will be managed.  Security Policy, Standards, Controls, Requirements, etc, etc, etc represent a huge body of text.  All of which needs to be managed, maintained, cross referenced, etc.

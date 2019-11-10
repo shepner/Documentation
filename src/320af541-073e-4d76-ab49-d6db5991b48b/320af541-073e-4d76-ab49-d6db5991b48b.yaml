@@ -21,9 +21,13 @@ revision:
     name: "Stephen Hepner"
     reason: "rewrite of initial draft into this document model"
 body:
-  # it is assumes that all files are within a dir structure using this document's ID
-  # any references outside of this structure are document IDs
+  # any references outside of this structure may be the document IDs
   # all document IDs are UUIDv4 only
+  
+  # all files directly referenced are within the document ID's folder
+  
+  # Header levels within the `.md` files must always start at H1
+  # Header levels in elements directly written in MD must always be at the correct level
   
   # this structure is only contains list elements
   # list elements may be:
@@ -31,9 +35,6 @@ body:
   #   yaml files: `*.yaml^` or UUIDv4
   #   markdown files: `*.md^`
   #   markdown text (default)
-  
-  # dont put headers within `.md` files to simplify formatting (for now)
-  # they *really* should be reduced as per the level it was in within the data tructure
 
 
   - "# placeholder text here" # H1 placeholder
@@ -61,7 +62,7 @@ body:
         
     - - "/OrgStructure.md" # Organizational structure
     
-      - "/Procedure.md" # Procedure
+      - "./Procedure.md" # Procedure
     
       # Implementation guidance
         # In addition to reporting of information security events and weaknesses (see also 13.1), the monitoring of systems, alerts, and vulnerabilities (10.10.2) should be used to detect information security incidents. The following guidelines for information security incident management procedures should be considered:    
