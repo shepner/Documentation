@@ -1,0 +1,57 @@
+%YAML 1.2
+---
+id: "52f61aa2-5622-490a-8735-a4e94499c706" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+title: "Requirement 12.10.1"
+subtitle: !
+author: "PCI Security Standards Council" #who wrote the document
+abstract: "Create the incident response plan to be implemented in the event of system breach"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+source: "[PCI DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf)"
+classification: "public" # Options: [public|private|confidential]
+referenceTag:
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "12.10.1"
+  relationship: # `ID : [parent|peer|child]`
+    "b5b0b831-ee7f-4547-b633-07b5f067ec0f": "parent"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
+revision:
+  - date: "20191111"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+body: |
+  # PCI DSS Requirements
+  
+  **12.10.1** Create the incident response plan to be implemented in the event of system breach. Ensure the plan addresses the following, at a minimum:
+
+  * Roles, responsibilities, and communication and contact strategies in the event of a compromise including notification of the payment brands, at a minimum
+  * Specific incident response procedures
+  * Business recovery and continuity procedures
+  * Data backup processes
+  * Analysis of legal requirements for reporting compromises
+  * Coverage and responses of all critical system components
+  * Reference or inclusion of incident response procedures from the payment brands.
+  
+  # Testing Procedures
+  
+  **12.10.1.a** Verify that the incident response plan includes:
+  
+  * Roles, responsibilities, and communication strategies in the event of a compromise including notification of the payment brands, at a minimum
+  * Specific incident response procedures
+  * Business recovery and continuity procedures
+  * Data backup processes
+  * Analysis of legal requirements for reporting compromises (for example, California Bill 1386, which requires notification of affected consumers in the event of an actual or suspected compromise for any business with California residents in their database)
+  * Coverage and responses for all critical system components
+  * Reference or inclusion of incident response procedures from the payment brands.
+  
+  **12.10.1.b** Interview personnel and review documentation from a sample of previously reported incidents or alerts to verify that the documented incident response plan and procedures were followed.
+  
+  # Guidance
+  
+  The incident response plan should be thorough and contain all the key elements to allow your company to respond effectively in the event of a breach that could impact cardholder data.
+...

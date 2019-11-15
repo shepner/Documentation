@@ -1,0 +1,39 @@
+%YAML 1.2
+---
+id: "80d15b5e-b53c-4e24-8009-59108f7a648c" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+title: "Requirement 12.10.2"
+subtitle: !
+author: "PCI Security Standards Council" #who wrote the document
+abstract: "Review and test the plan"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+source: "[PCI DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf)"
+classification: "public" # Options: [public|private|confidential]
+referenceTag:
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "12.10.2"
+  relationship: # `ID : [parent|peer|child]`
+    "b5b0b831-ee7f-4547-b633-07b5f067ec0f": "parent"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
+revision:
+  - date: "20191111"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+body: |
+  # PCI DSS Requirements
+  
+  **12.10.2** Review and test the plan, including all elements listed in Requirement 12.10.1, at least annually.
+  
+  # Testing Procedures
+  
+  **12.10.2** Interview personnel and review documentation from testing to verify that the plan is tested at least annually, and that testing includes all elements listed in Requirement 12.10.1.
+  
+  # Guidance
+  
+  Without proper testing, key steps may be missed, which could result in increased exposure during an incident.
+...

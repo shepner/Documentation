@@ -1,0 +1,31 @@
+%YAML 1.2
+---
+id: "2f3af308-8dd7-4632-9482-3936d386e04c" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+title: "Requirement 12"
+subtitle: !
+author: "PCI Security Standards Council" #who wrote the document
+abstract: "Maintain a policy that addresses information security for all personnel"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+source: "[PCI DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf)"
+classification: "public" # Options: [public|private|confidential]
+referenceTag:
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "12"
+  relationship: # `ID : [parent|peer|child]`
+    "ebd4a2a1-1c57-4dfb-b13b-c02355a40d74": "peer"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
+revision:
+  - date: "20191111"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+body: |
+  # Requirement 12: Maintain a policy that addresses information security for all personnel.
+  
+A strong security policy sets the security tone for the whole entity and informs personnel what is expected of them. All personnel should be aware of the sensitivity of data and their responsibilities for protecting it. For the purposes of Requirement 12, “personnel” refers to full-time and part-time employees, temporary employees, contractors and consultants who are “resident” on the entity’s site or otherwise have access to the cardholder data environment.
+...

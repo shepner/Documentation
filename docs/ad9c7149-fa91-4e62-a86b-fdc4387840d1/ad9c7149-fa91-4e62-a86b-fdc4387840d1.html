@@ -48,20 +48,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <![endif]-->
 </head>
 <body>
-<h1 id="documentation-management">Documentation management</h1>
+<h1 id="documentation-management"><span class="header-section-number">1</span> Documentation management</h1>
 <p>The purpose of this is to determine how the documentation will be managed. Security Policy, Standards, Controls, Requirements, etc, etc, etc represent a huge body of text. All of which needs to be managed, maintained, cross referenced, etc.</p>
 <p>This document is the template for how this will be performed using plain ASCII text files, structured using YAML, and formatted with Markdown.</p>
 <p>Ideally, all documentation would use this methodology at its core</p>
 <p>There are multiple advantages to this approach: No vendor lock-in: In particular, everything is stored in a simple easy to understand human readable format which can be implemented with a number of cheap or free solutions. All documentation is data: While that technically has always been the case, the use of YAML enforces that. Compiling documentation: Much like compiling code, this permits interacting with the documentation in interesting ways such as having a simple script which can pull out all of the relevant standards, provide references to <em>why</em> they are there (ie link back to the audit finding, regulatory control, etc) and output the whole thing in whatever format (PDF, spreadsheet, etc) the customer finds useful.</p>
-<h2 id="storage">Storage</h2>
+<h2 id="storage"><span class="header-section-number">1.1</span> Storage</h2>
 <p>All files will be stored in a single github repo. This will provide the needed revision history. This also permits branch control. Also, each file has a unique URL which will greatly aid in further unforseen possibilities.</p>
-<h2 id="file-naming">File naming</h2>
+<h2 id="file-naming"><span class="header-section-number">1.2</span> File naming</h2>
 <p>Ideally, the name of the file would be the contents of the ID field. As these are YAML spec files, the extension <code>.yaml</code> is to be used. In the event the mechanism storing the files does not have revision control, the full filename would be <code>&lt;ID&gt;_&lt;Revision Date&gt;.yaml</code>.</p>
-<h2 id="publishing">Publishing</h2>
+<h2 id="publishing"><span class="header-section-number">1.3</span> Publishing</h2>
 <p>It should be noted that this naming scheme is absolutely unhelpful for the human who wants to do anything with the files. To solve this problem, a table of contents is to be generated whenever there is a change to the body of information.</p>
 <p>When using a repository tool with the concept of branches, it would be possible to create an “official policy branch” or the like. If this is not available, or if it proves too difficult, this would have to be controlled by YAML config files to handle these groupings.</p>
 <p>The YAML config files are also needed for the output to have a sensible order. Without this, the resulting document will have all of the relevant data but randomly dispersed throughout with no logical order in that section. This could be done by explicitly setting the order (ie File A first, File C second, File B third) but ideally, this order would be managed automatically by the information contained within the files themselves.</p>
-<h2 id="file-format">File format</h2>
+<h2 id="file-format"><span class="header-section-number">1.4</span> File format</h2>
 <p>This is how the files would be formatted. Fields may be removed if not needed.</p>
 <p>Evaluation of the file starts with parsing the YAML followed by parsing the CommonMark (Markdown) within the values.</p>
 <p>See the <a href="">source</a> of this file for the layout <a href="https://yaml.org/">YAML Standard</a> <a href="https://commonmark.org/help/">CommonMark</a> (Markdown) <a href="https://spec.commonmark.org/current/">specification</a>: There are many specs (<a href="https://en.wikipedia.org/wiki/Markdown">Wikipedia discussion</a>) but this is closest to a standard <a href="https://lipsum.com/">lipsum.com - Lorem Ipsum generator</a></p>
@@ -91,7 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">      - “589ccbb2-b074-4773-909e-10be26aef46b”</span>
 <span class="co">    type: Standard  # dont care about the order of the output for this section</span>
 <span class="co">...</span></code></pre></div>
-<h3 id="references">References:</h3>
+<h3 id="references"><span class="header-section-number">1.4.1</span> References:</h3>
 <ul>
 <li>https://www.codeproject.com/Tips/5248463/Building-YAML-Flavored-Markdown-with-EPS-Extension</li>
 <li>https://jmduke.com/2015/11/09/embedding-markdown-in-yaml</li>
@@ -105,7 +105,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>https://yaml-online-parser.appspot.com/</p></li>
 </ul>
 <hr />
-<h1 id="revision-history">Revision history</h1>
+<h1 id="revision-history"><span class="header-section-number">2</span> Revision history</h1>
 <style>
 table { border-collapse: collapse; width: 100%; }
 td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }

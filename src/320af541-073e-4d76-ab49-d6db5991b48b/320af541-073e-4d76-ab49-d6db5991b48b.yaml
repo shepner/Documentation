@@ -4,7 +4,7 @@ id: "320af541-073e-4d76-ab49-d6db5991b48b" # [UUIDv4 generator](https://www.uuid
 title: "Incident Response Plan"
 subtitle: !
 author: "Stephen Hepner" #who wrote the document
-abstract: !
+abstract: "management of security incidents and improvements"
 lang: "en"
 type: "procedure" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
 source: !
@@ -21,118 +21,62 @@ revision:
     name: "Stephen Hepner"
     reason: "rewrite of initial draft into this document model"
 body:
-  # any references outside of this structure may be the document IDs
-  # all document IDs are UUIDv4 only
+  # Document references:
+  # 1. ISO 27002:2005:  Primary document structure
+  # 2. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): Secondary document structure
+  # 3. PCI DSS 3.2.1: Regulatory requirements
   
-  # all files directly referenced are within the document ID's folder
-  
-  # Header levels within the `.md` files must always start at H1
-  # Header levels in elements directly written in MD must always be at the correct level
-  
-  # this structure is only contains list elements
-  # list elements may be:
-  #   list elements
-  #   yaml files: `*.yaml^` or UUIDv4
-  #   markdown files: `*.md^`
-  #   markdown text (default)
 
+  - "Overview.md" # Overview
+    # ISO 27002:2005 13.2 "Management of information security incidents and improvements"
+    # PCI DSS 3.2.1 "Requirement [12.10](b5b0b831-ee7f-4547-b633-07b5f067ec0f)" Implement an incident response plan
+    # NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3 Incident Response Policy, Plan, and Procedure Creation
 
-  - "# placeholder text here" # H1 placeholder
-  
-  # The structure of this is built upon the following in the indicated order:
-  # 1. ISO 27002:2005
-  # 2. PCI DSS 
-  # 3. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final
-  
-  #http://karlwinegardner.blogspot.com/2011/02/how-to-create-footnotes-in-html.html
-  
-  # ISO 27002:2005 13.2 "Management of information security incidents and improvements"
-  
-  #- - "mission.md" # Mission
-  - - "## Mission"
+  - "Mission.md" # Mission statement
+    # NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3.2 Plan Elements
     
-    - "320af541-073e-4d76-ab49-d6db5991b48b/ServiceCatalog.md" # Service Catalog
+  - "ServiceCatalog.md" # Service Catalog
     
-    #- "/RespAndProc.md" # Responsibility and procedures
-    - "## Responsibility and procedures"
     
+  - "RespAndProc.md" # Responsibility and procedures
     # ISO 27002:2005 13.2.1 "Responsibility and procedures"
-      # Control
-        # Management responsibilities and procedures should be established to ensure a quick, effective, and orderly response to information security incidents.
+    # NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3.2 Plan Elements
         
-    - - "/OrgStructure.md" # Organizational structure
-    
-      - "./Procedure.md" # Procedure
-    
-      # Implementation guidance
-        # In addition to reporting of information security events and weaknesses (see also 13.1), the monitoring of systems, alerts, and vulnerabilities (10.10.2) should be used to detect information security incidents. The following guidelines for information security incident management procedures should be considered:    
-          # ISO 27002:2005 13.2.1.a
-            # procedures should be established to handle different types of information security incident, including:
-              # * information system failures and loss of service;
-              # * malicious code (see 10.4.1);
-              # * denial of service;
-              # * errors resulting from incomplete or inaccurate business data;
-              # * breaches of confidentiality and integrity;
-              # * misuse of information systems;
-          # ISO 27002:2005 13.2.1.b
-            # in addition to normal contingency plans (see 14.1.3), the procedures should also cover (see also 13.2.2):
-              # * analysis and identification of the cause of the incident;
-              # * containment;
-              # * planning and implementation of corrective action to prevent recurrence, if necessary;
-              # * communication with those affected by or involved with recovery from the incident;
-              # * reporting the action to the appropriate authority;
-          # ISO 27002:2005 13.2.1.c
-            # audit trails and similar evidence should be collected (see 13.2.3) and secured, as appropriate, for:
-              # * internal problem analysis;
-              # * use as forensic evidence in relation to a potential breach of contract or regulatory requirement or in the event of civil or criminal proceedings, e.g. under computer misuse or data protection legislation;
-              # * negotiating for compensation from software and service suppliers;
-          
-      - "/Recovery.md" # Recovery
-          
-          # ISO 27002:2005 13.2.1.d
-            # action to recover from security breaches and correct system failures should be carefully and formally controlled; the procedures should ensure that:
-              # * only clearly identified and authorized personnel are allowed access to live systems and data (see also 6.2 for external access);
-              # * all emergency actions taken are documented in detail;
-              # * emergency action is reported to management and reviewed in an orderly manner;
-              # * the integrity of business systems and controls is confirmed with minimal delay.
-              
-      - '/Escalation.md' # Escalation procedures
-
-        # The objectives for information security incident management should be agreed with management, and it should be ensured that those responsible for information security incident management understand the organization’s priorities for handling information security incidents.
-      # Other information
-        # Information security incidents might transcend organizational and national boundaries. To respond to such incidents there is an increasing need to coordinate response and share information about these incidents with external organizations as appropriate.
-    
-    - "/Review.md" # Learning from information security incidents
-    
-    # ISO 27002:2005 13.2.2 "Learning from information security incidents"
-      # Control
-        # There should be mechanisms in place to enable the types, volumes, and costs of information security incidents to be quantified and monitored.
-      # Implementation guidance
-        # The information gained from the evaluation of information security incidents should be used to identify recurring or high impact incidents.
-      # Other Information
-        # The evaluation of information security incidents may indicate the need for enhanced or additional controls to limit the frequency, damage, and cost of future occurrences, or to be taken into account in the security policy review process (see 5.1.2).
-        
-    - - "/Reporting.md" # Reporting, metrics and cyber intelligence
+  - - "OrgStructure.md" # Organizational structure and responsibilities
+      # ISO 27002:2005 13.2.1 "Responsibility and procedures"
+      # PCI DSS 3.2.1 "Requirement [12.10.1](52f61aa2-5622-490a-8735-a4e94499c706)" Create the incident response plan to be implemented in the event of system breach
+      # PCI DSS 3.2.1 "Requirement [12.10.3](1fb68322-8ba4-485e-8c2f-be4b174f4aad)" Designate specific personnel to be available
+      # PCI DSS 3.2.1 "Requirement [12.10.4](1d38a229-60e7-4559-856e-cdcf72577c99)" Provide appropriate training to staff
+      # NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.4.1 Team Models
       
-    - "/EvidenceCollection.md" # Collection of evidence
+    - "Procedure.md" # Procedure
+      # ISO 27002:2005 13.2.1.a
+      # ISO 27002:2005 13.2.1.b
+      # ISO 27002:2005 13.2.1.c
+      # PCI DSS 3.2.1 "Requirement [12.10.1](52f61aa2-5622-490a-8735-a4e94499c706)" Create the incident response plan to be implemented in the event of system breach
+      # NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3.3 Procedure Elements
+          
+    - "Recovery.md" # Recovery
+      # ISO 27002:2005 13.2.1.d
+      
+    - "Escalation.md" # Escalation procedures
+      # ISO 27002:2005 13.2.1 "Responsibility and procedures"
+    
+  - "Review.md" # Learning from information security incidents
+    # ISO 27002:2005 13.2.2 "Learning from information security incidents"
+    # PCI DSS 3.2.1 "Requirement [12.10.2](80d15b5e-b53c-4e24-8009-59108f7a648c)" Review and test the plan
+    # PCI DSS 3.2.1 "Requirement [12.10.6](2e27e0a6-51ad-40f8-985a-0aaf5b27c131)" Develop a process to modify and evolve the incident response plan
+    # PCI DSS 3.2.1 "Requirement [12.11](24c4ffec-40cb-4abf-aa42-ce0677dc6b96)" Perform reviews
+    # PCI DSS 3.2.1 "Requirement [12.11.1](f29e60fc-9fc1-41d9-b4d9-0f9f3e2ad734)" Maintain documentation of review process
         
+  - - "Reporting.md" # Reporting, metrics and cyber intelligence
+      # PCI DSS 3.2.1 "Requirement [12.10.1](52f61aa2-5622-490a-8735-a4e94499c706)" Create the incident response plan to be implemented in the event of system breach
+      # NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3.4 Sharing Information With Outside Parties
+      
+  - "EvidenceCollection.md" # Collection of evidence
     # ISO 27002:2005 13.2.3 "Collection of evidence"
-      # Control
-        # Where a follow-up action against a person or organization after an information security incident involves legal action (either civil or criminal), evidence should be collected, retained, and presented to conform to the rules for evidence laid down in the relevant jurisdiction(s).
-      # Implementation guidance
-        # Internal procedures should be developed and followed when collecting and presenting evidence for the purposes of disciplinary action handled within an organization.
-        # In general, the rules for evidence cover:
-          # a) admissibility of evidence: whether or not the evidence can be used in court;
-          # b) weight of evidence: the quality and completeness of the evidence.
-        # To achieve admissibility of the evidence, the organization should ensure that their information systems comply with any published standard or code of practice for the production of admissible evidence.
-        # The weight of evidence provided should comply with any applicable requirements. To achieve weight of evidence, the quality and completeness of the controls used to correctly and consistently protect the evidence (i.e. process control evidence) throughout the period that the evidence to be recovered was stored and processed should be demonstrated by a strong evidence trail. In general, such a strong trail can be established under the following conditions:
-          # a) for paper documents: the original is kept securely with a record of the individual who found the document, where the document was found, when the document was found and who witnessed the discovery; any investigation should ensure that originals are not tampered with;
-          # b) for information on computer media: mirror images or copies (depending on applicable requirements) of any removable media, information on hard disks or in memory should be taken to ensure availability; the log of all actions during the copying process should be kept and the process should be witnessed; the original media and the log (if this is not possible, at least one mirror image or copy) should be kept securely and untouched.
-        # Any forensics work should only be performed on copies of the evidential material. The integrity of all evidential material should be protected. Copying of evidential material should be supervised by trustworthy personnel and information on when and where the copying process was executed, who performed the copying activities and which tools and programs have been utilized should be logged.
-      # Other information
-        # When an information security event is first detected, it may not be obvious whether or not the event will result in court action. Therefore, the danger exists that necessary evidence is destroyed intentionally or accidentally before the seriousness of the incident is realized. It is advisable to involve a lawyer or the police early in any contemplated legal action and take advice on the evidence required.
-        # Evidence may transcend organizational and/or jurisdictional boundaries. In such cases, it should be ensured that the organization is entitled to collect the required information as evidence. The requirements of different jurisdictions should also be considered to maximize chances of admission across the relevant jurisdictions.
+    # PCI DSS 3.2.1 "Requirement [12.10.5](76d31bbe-7051-40a8-97f4-538cfb554c2f)" Include alerts from security monitoring systems
 
-    - "/Compliance.md" # Compliance
+  - "/Compliance.md" # Compliance
 
 ...

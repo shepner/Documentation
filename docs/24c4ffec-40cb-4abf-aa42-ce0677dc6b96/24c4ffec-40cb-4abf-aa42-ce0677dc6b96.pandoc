@@ -1,0 +1,51 @@
+# PCI DSS Requirements
+
+**12.11** **Additional requirement for service providers only**: Perform reviews at least quarterly to confirm personnel are following security policies and operational procedures. Reviews must cover the following processes:
+
+* Daily log reviews
+* Firewall rule-set reviews
+* Applying configuration standards to new systems
+* Responding to security alerts
+* Change management processes
+
+# Testing Procedures
+
+**12.11.a** Examine policies and procedures to verify that processes are defined for reviewing and confirming that personnel are following security policies and operational procedures, and that reviews cover:
+
+* Daily log reviews
+* Firewall rule-set reviews
+* Applying configuration standards to new systems
+* Responding to security alerts
+* Change management processes
+
+**12.11.b** Interview responsible personnel and examine records of reviews to verify that reviews are performed at least quarterly.
+
+# Guidance
+
+***Note**: This requirement applies only when the entity being assessed is a service provider.*
+
+Regularly confirming that security policies and procedures are being followed provides assurance that the expected controls are active and working as intended. The objective of these reviews is not to re-perform other PCI DSS requirements, but to confirm whether procedures are being followed as expected.
+
+
+
+---
+
+# Revision history
+
+<style>
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+</style>
+
+<table>
+<tr>
+<th>Date</th>
+<th>Name</th>
+<th>Reason</th>
+</tr>
+<tr>
+<td>20191111</td>
+<td>Stephen Hepner</td>
+<td>Current version of PCI DSS</td>
+</tr>
+</table>

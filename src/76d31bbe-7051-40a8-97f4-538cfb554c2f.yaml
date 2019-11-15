@@ -1,0 +1,39 @@
+%YAML 1.2
+---
+id: "76d31bbe-7051-40a8-97f4-538cfb554c2f" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+title: "Requirement 12.10.5"
+subtitle: !
+author: "PCI Security Standards Council" #who wrote the document
+abstract: "Include alerts from security monitoring systems"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+source: "[PCI DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf)"
+classification: "public" # Options: [public|private|confidential]
+referenceTag:
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "12.10.5"
+  relationship: # `ID : [parent|peer|child]`
+    "b5b0b831-ee7f-4547-b633-07b5f067ec0f": "parent"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
+revision:
+  - date: "20191111"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+body: |
+  # PCI DSS Requirements
+  
+  **12.10.5** Include alerts from security monitoring systems, including but not limited to intrusion-detection, intrusion-prevention, firewalls, and file-integrity monitoring systems.
+  
+  # Testing Procedures
+  
+  **12.10.5** Verify through observation and review of processes that monitoring and responding to alerts from security monitoring systems are covered in the incident response plan.
+  
+  # Guidance
+  
+  These monitoring systems are designed to focus on potential risk to data, are critical in taking quick action to prevent a breach, and must be included in the incident-response processes.
+...

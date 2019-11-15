@@ -3,19 +3,18 @@
 id: "ebd4a2a1-1c57-4dfb-b13b-c02355a40d74" # [UUIDv4 generator](https://www.uuidgenerator.net/)
 title: "Requirement 1"
 subtitle: !
-author: "Stephen Hepner" #who wrote the document
+author: "PCI Security Standards Council" #who wrote the document
 abstract: "Install and maintain a firewall configuration to protect cardholder data"
 lang: "en"
 type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
-source: "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
+source: "[PCI DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf)"
 classification: "public" # Options: [public|private|confidential]
 referenceTag:
   keywords: # This is a list (use `-`)
     - "PCI":
       - "PCI DSS v3.2.1":
         - "1"
-  relationship: # `ID : [parent|peer|child]`
-    "ad9c7149-fa91-4e62-a86b-fdc4387840d1": "parent"
+  relationship: ! # `ID : [parent|peer|child]`
 status: # this section is to provide some automatic documentation management
   status: "complete" # Options: [draft|review|complete|expire]
   effective: 201805

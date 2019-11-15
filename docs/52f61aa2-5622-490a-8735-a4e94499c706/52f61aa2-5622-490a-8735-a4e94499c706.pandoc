@@ -1,0 +1,53 @@
+# PCI DSS Requirements
+
+**12.10.1** Create the incident response plan to be implemented in the event of system breach. Ensure the plan addresses the following, at a minimum:
+
+* Roles, responsibilities, and communication and contact strategies in the event of a compromise including notification of the payment brands, at a minimum
+* Specific incident response procedures
+* Business recovery and continuity procedures
+* Data backup processes
+* Analysis of legal requirements for reporting compromises
+* Coverage and responses of all critical system components
+* Reference or inclusion of incident response procedures from the payment brands.
+
+# Testing Procedures
+
+**12.10.1.a** Verify that the incident response plan includes:
+
+* Roles, responsibilities, and communication strategies in the event of a compromise including notification of the payment brands, at a minimum
+* Specific incident response procedures
+* Business recovery and continuity procedures
+* Data backup processes
+* Analysis of legal requirements for reporting compromises (for example, California Bill 1386, which requires notification of affected consumers in the event of an actual or suspected compromise for any business with California residents in their database)
+* Coverage and responses for all critical system components
+* Reference or inclusion of incident response procedures from the payment brands.
+
+**12.10.1.b** Interview personnel and review documentation from a sample of previously reported incidents or alerts to verify that the documented incident response plan and procedures were followed.
+
+# Guidance
+
+The incident response plan should be thorough and contain all the key elements to allow your company to respond effectively in the event of a breach that could impact cardholder data.
+
+
+
+---
+
+# Revision history
+
+<style>
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+</style>
+
+<table>
+<tr>
+<th>Date</th>
+<th>Name</th>
+<th>Reason</th>
+</tr>
+<tr>
+<td>20191111</td>
+<td>Stephen Hepner</td>
+<td>Current version of PCI DSS</td>
+</tr>
+</table>

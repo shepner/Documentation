@@ -1,6 +1,22 @@
-# placeholder text here
+# Overview
 
-## Mission
+The purpose of this document is to define the management of security incidents and improvements
+
+<details><summary>References</summary>
+
+1. ISO 27002:2005 13.2 "Management of information security incidents and improvements"
+2. PCI DSS 3.2.1 "Requirement [12.10](b5b0b831-ee7f-4547-b633-07b5f067ec0f)" Implement an incident response plan
+3. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3 Incident Response Policy, Plan, and Procedure Creation
+</details>
+
+# Mission
+
+Incident Response Team (IRT) is to detect/contain cybersecurity threats to Company, determine the identity of the threat actor(s), work with applicable law enforcement, and provide applicable cyber intelligence to Company.
+
+<details><summary>References</summary>
+
+1. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3.2 Plan Elements
+</details>
 
 # Service Catalog
 
@@ -9,16 +25,126 @@ Data analytics
 Generation of threat intel
 
 
-## Responsibility and procedures
+# Responsibility and procedures
 
-## Organizational structure
+Management responsibilities and procedures should be established to ensure a quick, effective, and orderly response to information security incidents.
 
-The Security Incident Management team reports to the Manager of Cyber Security.  The team’s lead is the primary conduit for day-to-day operational needs.
 
+<details><summary>References</summary>
+
+1. ISO 27002:2005 13.2.1 "Responsibility and procedures"
+2. PCI DSS 3.2.1 "Requirement [12.10.1](52f61aa2-5622-490a-8735-a4e94499c706) Create the incident response plan to be implemented in the event of system breach
+3. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3.2 Plan Elements
+</details>
+
+## Organizational structure and responsibilities
+
+The Security Incident Management group reports to the Manager of Cyber Security.
+
+The group’s lead is the primary conduit for day-to-day operational and escalation needs.
+
+Members of the group will maintain an on-call rotation to obtain 24/7/365 coverage
+
+Appropriate training will be provided to group members for how to respond to security breaches.  Group members are additionally expected to continually seek out training on their own.
+
+The group will follow a centralized model<sup><a id="Organizational_structure_and_responsibilities-ref1-src" href="#Organizational_structure_and_responsibilities-ref1">[1]</a></sup> but the members may be geographically disperse.
+
+Staffing will be pridominately follow a partially outsourced model.<sup><a id="Organizational_structure_and_responsibilities-ref2-src" href="#Organizational_structure_and_responsibilities-ref2">[2]</a></sup>
+Consultants are to be used for the first level screening of incoming information without access to sensitive information.
+
+<details><summary>Footnotes</summary>
+
+1. <a id="Organizational_structure_and_responsibilities-ref1" href="#Organizational_structure_and_responsibilities-ref1-src" title="Jump up">^</a> NIST SP 800-61 Rev. 2: 2.4.1 Team Models: Central Incident Response Team
+2. <a id="Organizational_structure_and_responsibilities-ref2" href="#Organizational_structure_and_responsibilities-ref2-src" title="Jump up">^</a> NIST SP 800-61 Rev. 2: 2.4.1 staffing models: Partially Outsourced
+</details>
+
+<details><summary>References</summary>
+
+1. ISO 27002:2005 13.2.1 "Responsibility and procedures"
+2. PCI DSS 3.2.1 "Requirement [12.10.1](52f61aa2-5622-490a-8735-a4e94499c706)" Create the incident response plan to be implemented in the event of system breach
+3. PCI DSS 3.2.1 "Requirement [12.10.3](1fb68322-8ba4-485e-8c2f-be4b174f4aad)" Designate specific personnel to be available
+4. PCI DSS 3.2.1 "Requirement [12.10.4](1d38a229-60e7-4559-856e-cdcf72577c99)" Provide appropriate training to staff
+5. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.4.1 Team Models
+</details>
 
 ## Procedure
 
+Group team members are to monitor systems, alerts, and vulnerabilities to detect security incidents.
+
+
+procedures should be established to handle different types of information security incident, including:
+
+* information system failures and loss of service;
+* malicious code (see 10.4.1);<sup><a id="Procedure-ref1-src" href="#Procedure-ref1">[1]</a></sup>
+* denial of service;
+* errors resulting from incomplete or inaccurate business data;
+* breaches of confidentiality and integrity;
+* misuse of information systems;
+
+in addition to normal contingency plans (see 14.1.3), the procedures should also cover (see also 13.2.2):
+
+* analysis and identification of the cause of the incident;
+* containment;
+* planning and implementation of corrective action to prevent recurrence, if necessary;
+* communication with those affected by or involved with recovery from the incident;
+* reporting the action to the appropriate authority;
+
+audit trails and similar evidence should be collected (see 13.2.3) and secured, as appropriate, for:
+
+* internal problem analysis;
+* use as forensic evidence in relation to a potential breach of contract or regulatory requirement or in the event of civil or criminal proceedings, e.g. under computer misuse or data protection legislation;
+* negotiating for compensation from software and service suppliers;
+
+
+
+NIST 2.3.3
+Procedures should be based on the incident response policy and plan. Standard operating procedures (SOPs) are a delineation of the specific technical processes, techniques, checklists, and forms used by the incident response team. SOPs should be reasonably comprehensive and detailed to ensure that the 
+
+priorities of the organization are reflected in response operations. In addition, following standardized responses should minimize errors, particularly those that might be caused by stressful incident handling situations. SOPs should be tested to validate their accuracy and usefulness, then distributed to all team members. Training should be provided for SOP users; the SOP documents can be used as an instructional tool. Suggested SOP elements are presented throughout Section 3.
+
+
+<details><summary>Footnotes</summary>
+
+1. <a id="Procedure-ref1" href="#Procedure-ref1-src" title="Jump up">^</a> ISO 27002:2005 10.4.1 Controls against malicious code
+</details>
+
+<details><summary>References</summary>
+
+1. ISO 27002:2005 13.2.1 "Responsibility and procedures"
+2. ISO 27002:2005 13.2.1.a "Responsibility and procedures"
+3. ISO 27002:2005 13.2.1.b "Responsibility and procedures"
+4. ISO 27002:2005 13.2.1.c "Responsibility and procedures"
+5. PCI DSS 3.2.1 "Requirement [12.10.1](52f61aa2-5622-490a-8735-a4e94499c706)" Create the incident response plan to be implemented in the event of system breach
+6. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3.3 Procedure Elements
+</details>
+
 ## Recovery
+
+action to recover from security breaches and correct system failures should be carefully and formally controlled; the procedures should ensure that:
+
+* only clearly identified and authorized personnel are allowed access to live systems and data (see also 6.2 for external access);
+* all emergency actions taken are documented in detail;
+* emergency action is reported to management and reviewed in an orderly manner;
+* the integrity of business systems and controls is confirmed with minimal delay.
+
+<details><summary>References</summary>
+
+1. ISO 27002:2005 13.2.1 "Responsibility and procedures"
+2. ISO 27002:2005 13.2.1.d "Responsibility and procedures"
+</details>
+
+## Escalation procedures
+
+The objectives for information security incident management should be agreed with management, and it should be ensured that those responsible for information security incident management understand the organization’s priorities for handling information security incidents.
+
+Information security incidents might transcend organizational and national boundaries. To respond to such incidents there is an increasing need to coordinate response and share information about these incidents with external organizations as appropriate.
+
+
+<details><summary>References</summary>
+
+1. ISO 27002:2005 13.2.1 "Responsibility and procedures"
+2. PCI DSS 3.2.1 "Requirement [12.10.1](52f61aa2-5622-490a-8735-a4e94499c706)" Create the incident response plan to be implemented in the event of system breach
+</details>
 
 
 
@@ -26,7 +152,47 @@ The Security Incident Management team reports to the Manager of Cyber Security. 
 
 # Learning from information security incidents
 
+There should be mechanisms in place to enable the types, volumes, and costs of information security incidents to be quantified and monitored.
+
+The information gained from the evaluation of information security incidents should be used to identify recurring or high impact incidents.
+
+The evaluation of information security incidents may indicate the need for enhanced or additional controls to limit the frequency, damage, and cost of future occurrences, or to be taken into account in the security policy review process (see 5.1.2).
+
+<details><summary>References</summary>
+
+1. ISO 27002:2005 13.2.2 "Learning from information security incidents"
+2. PCI DSS 3.2.1 "Requirement [12.10.2](80d15b5e-b53c-4e24-8009-59108f7a648c)" Review and test the plan
+3. PCI DSS 3.2.1 "Requirement [12.10.6](2e27e0a6-51ad-40f8-985a-0aaf5b27c131)" Develop a process to modify and evolve the incident response plan
+4. PCI DSS 3.2.1 "Requirement [12.11](24c4ffec-40cb-4abf-aa42-ce0677dc6b96)" Perform reviews
+5. PCI DSS 3.2.1 "Requirement [12.11.1](f29e60fc-9fc1-41d9-b4d9-0f9f3e2ad734)" Maintain documentation of review process
+</details>
+
 ## Reporting, metrics and cyber intelligence
+
+
+2.3.4 Sharing Information With Outside Parties
+Organizations often need to communicate with outside parties regarding an incident, and they should do
+so whenever appropriate, such as contacting law enforcement, fielding media inquiries, and seeking
+external expertise. Another example is discussing incidents with other involved parties, such as Internet
+service providers (ISPs), the vendor of vulnerable software, or other incident response teams.
+Organizations may also proactively share relevant incident indicator information with peers to improve
+detection and analysis of incidents. The incident response team should discuss information sharing with
+the organization’s public affairs office, legal department, and management before an incident occurs to
+establish policies and procedures regarding information sharing. Otherwise, sensitive information
+regarding incidents may be provided to unauthorized parties, potentially leading to additional disruption
+and financial loss. The team should document all contacts and communications with outside parties for
+liability and evidentiary purposes.
+The following sections provide guidelines on communicating with several types of outside parties, as
+depicted in Figure 2-1. The double-headed arrows indicate that either party may initiate communications.
+See Section 4 for additional information on communicating with outside parties, and see Section 2.4 for a
+discussion of communications involving incident response outsourcers.
+
+
+<details><summary>References</summary>
+
+1. PCI DSS 3.2.1 "Requirement [12.10.1](52f61aa2-5622-490a-8735-a4e94499c706)" Create the incident response plan to be implemented in the event of system breach
+2. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3.4 Sharing Information With Outside Parties
+</details>
 
 
 
@@ -35,8 +201,34 @@ The Security Incident Management team reports to the Manager of Cyber Security. 
 # Collection of evidence
 
 
+Where a follow-up action against a person or organization after an information security incident involves legal action (either civil or criminal), evidence should be collected, retained, and presented to conform to the rules for evidence laid down in the relevant jurisdiction(s).
+
+Internal procedures should be developed and followed when collecting and presenting evidence for the purposes of disciplinary action handled within an organization.
+
+In general, the rules for evidence cover:
+a) admissibility of evidence: whether or not the evidence can be used in court;
+b) weight of evidence: the quality and completeness of the evidence.
+
+To achieve admissibility of the evidence, the organization should ensure that their information systems comply with any published standard or code of practice for the production of admissible evidence.
+
+The weight of evidence provided should comply with any applicable requirements. To achieve weight of evidence, the quality and completeness of the controls used to correctly and consistently protect the evidence (i.e. process control evidence) throughout the period that the evidence to be recovered was stored and processed should be demonstrated by a strong evidence trail. In general, such a strong trail can be established under the following conditions:
+a) for paper documents: the original is kept securely with a record of the individual who found the document, where the document was found, when the document was found and who witnessed the discovery; any investigation should ensure that originals are not tampered with;
+b) for information on computer media: mirror images or copies (depending on applicable requirements) of any removable media, information on hard disks or in memory should be taken to ensure availability; the log of all actions during the copying process should be kept and the process should be witnessed; the original media and the log (if this is not possible, at least one mirror image or copy) should be kept securely and untouched.
+
+Any forensics work should only be performed on copies of the evidential material. The integrity of all evidential material should be protected. Copying of evidential material should be supervised by trustworthy personnel and information on when and where the copying process was executed, who performed the copying activities and which tools and programs have been utilized should be logged.
+
+When an information security event is first detected, it may not be obvious whether or not the event will result in court action. Therefore, the danger exists that necessary evidence is destroyed intentionally or accidentally before the seriousness of the incident is realized. It is advisable to involve a lawyer or the police early in any contemplated legal action and take advice on the evidence required.
+
+Evidence may transcend organizational and/or jurisdictional boundaries. In such cases, it should be ensured that the organization is entitled to collect the required information as evidence. The requirements of different jurisdictions should also be considered to maximize chances of admission across the relevant jurisdictions.
 
 
+<details><summary>References</summary>
+
+1. ISO 27002:2005 13.2.3 "Collection of evidence"
+2. PCI DSS 3.2.1 "Requirement [12.10.5](76d31bbe-7051-40a8-97f4-538cfb554c2f)" Include alerts from security monitoring systems
+</details>
+
+# Compliance
 
 
 

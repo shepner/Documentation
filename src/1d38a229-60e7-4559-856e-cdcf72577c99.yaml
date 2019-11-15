@@ -1,0 +1,39 @@
+%YAML 1.2
+---
+id: "1d38a229-60e7-4559-856e-cdcf72577c99" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+title: "Requirement 12.10.4"
+subtitle: !
+author: "PCI Security Standards Council" #who wrote the document
+abstract: "Provide appropriate training to staff"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+source: "[PCI DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf)"
+classification: "public" # Options: [public|private|confidential]
+referenceTag:
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "12.10.4"
+  relationship: # `ID : [parent|peer|child]`
+    "b5b0b831-ee7f-4547-b633-07b5f067ec0f": "parent"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
+revision:
+  - date: "20191111"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+body: |
+  # PCI DSS Requirements
+  
+  **12.10.4** Provide appropriate training to staff with security breach response responsibilities.
+  
+  # Testing Procedures
+  
+  **12.10.4** Verify through observation, review of policies, and interviews of responsible personnel that staff with responsibilities for security breach response are periodically trained.
+  
+  # Guidance
+  
+  Without a trained and readily available incident response team, extended damage to the network could occur, and critical data and systems may become “polluted” by inappropriate handling of the targeted systems. This can hinder the success of a post-incident investigation.
+...

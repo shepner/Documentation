@@ -1,0 +1,35 @@
+# PCI DSS Requirements
+
+**12.10.6** Develop a process to modify and evolve the incident response plan according to lessons learned and to incorporate industry developments.
+
+# Testing Procedures
+
+**12.10.6** Verify through observation, review of policies, and interviews of responsible personnel that there is a process to modify and evolve the incident response plan according to lessons learned and to incorporate industry developments.
+
+# Guidance
+
+Incorporating “lessons learned” into the incident response plan after an incident helps keep the plan current and able to react to emerging threats and security trends.
+
+
+
+---
+
+# Revision history
+
+<style>
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+</style>
+
+<table>
+<tr>
+<th>Date</th>
+<th>Name</th>
+<th>Reason</th>
+</tr>
+<tr>
+<td>20191111</td>
+<td>Stephen Hepner</td>
+<td>Current version of PCI DSS</td>
+</tr>
+</table>

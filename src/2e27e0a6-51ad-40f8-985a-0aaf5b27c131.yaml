@@ -1,0 +1,39 @@
+%YAML 1.2
+---
+id: "2e27e0a6-51ad-40f8-985a-0aaf5b27c131" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+title: "Requirement 12.10.6"
+subtitle: !
+author: "PCI Security Standards Council" #who wrote the document
+abstract: "Develop a process to modify and evolve the incident response plan"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+source: "[PCI DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf)"
+classification: "public" # Options: [public|private|confidential]
+referenceTag:
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "12.10.6"
+  relationship: # `ID : [parent|peer|child]`
+    "b5b0b831-ee7f-4547-b633-07b5f067ec0f": "parent"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
+revision:
+  - date: "20191111"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+body: |
+  # PCI DSS Requirements
+  
+  **12.10.6** Develop a process to modify and evolve the incident response plan according to lessons learned and to incorporate industry developments.
+  
+  # Testing Procedures
+  
+  **12.10.6** Verify through observation, review of policies, and interviews of responsible personnel that there is a process to modify and evolve the incident response plan according to lessons learned and to incorporate industry developments.
+  
+  # Guidance
+  
+  Incorporating “lessons learned” into the incident response plan after an incident helps keep the plan current and able to react to emerging threats and security trends.
+...

@@ -1,0 +1,35 @@
+# PCI DSS Requirements
+
+**12.10.2** Review and test the plan, including all elements listed in Requirement 12.10.1, at least annually.
+
+# Testing Procedures
+
+**12.10.2** Interview personnel and review documentation from testing to verify that the plan is tested at least annually, and that testing includes all elements listed in Requirement 12.10.1.
+
+# Guidance
+
+Without proper testing, key steps may be missed, which could result in increased exposure during an incident.
+
+
+
+---
+
+# Revision history
+
+<style>
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+</style>
+
+<table>
+<tr>
+<th>Date</th>
+<th>Name</th>
+<th>Reason</th>
+</tr>
+<tr>
+<td>20191111</td>
+<td>Stephen Hepner</td>
+<td>Current version of PCI DSS</td>
+</tr>
+</table>

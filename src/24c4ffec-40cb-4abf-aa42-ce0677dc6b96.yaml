@@ -1,0 +1,56 @@
+%YAML 1.2
+---
+id: "24c4ffec-40cb-4abf-aa42-ce0677dc6b96" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+title: "Requirement 12.11"
+subtitle: !
+author: "PCI Security Standards Council" #who wrote the document
+abstract: "Perform reviews"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+source: "[PCI DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf)"
+classification: "public" # Options: [public|private|confidential]
+referenceTag:
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "12.11"
+  relationship: # `ID : [parent|peer|child]`
+    "2f3af308-8dd7-4632-9482-3936d386e04c": "parent"
+    "b5b0b831-ee7f-4547-b633-07b5f067ec0f": "peer"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
+revision:
+  - date: "20191111"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+body: |
+  # PCI DSS Requirements
+  
+  **12.11** **Additional requirement for service providers only**: Perform reviews at least quarterly to confirm personnel are following security policies and operational procedures. Reviews must cover the following processes:
+  
+  * Daily log reviews
+  * Firewall rule-set reviews
+  * Applying configuration standards to new systems
+  * Responding to security alerts
+  * Change management processes
+  
+  # Testing Procedures
+  
+  **12.11.a** Examine policies and procedures to verify that processes are defined for reviewing and confirming that personnel are following security policies and operational procedures, and that reviews cover:
+  
+  * Daily log reviews
+  * Firewall rule-set reviews
+  * Applying configuration standards to new systems
+  * Responding to security alerts
+  * Change management processes
+  
+  **12.11.b** Interview responsible personnel and examine records of reviews to verify that reviews are performed at least quarterly.
+  
+  # Guidance
+  
+  ***Note**: This requirement applies only when the entity being assessed is a service provider.*
+ 
+  Regularly confirming that security policies and procedures are being followed provides assurance that the expected controls are active and working as intended. The objective of these reviews is not to re-perform other PCI DSS requirements, but to confirm whether procedures are being followed as expected.
+...

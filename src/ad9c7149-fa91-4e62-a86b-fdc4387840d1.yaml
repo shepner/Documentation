@@ -68,6 +68,23 @@ revision: # who did what when.  Keep it short and useful
 #   `"content": *`: Will be treated as MarkDown (CommonMark)
 # In all cases, the content will be concatenated together in the order listed using the hiearchy presented.  Headers will be offset according to the YAML structure
 
+#################
+  # any references outside of this structure may be the document IDs
+  # all document IDs are UUIDv4 only
+  
+  # all files directly referenced are within the document ID's folder
+  
+  # Header levels within the `.md` files must always start at H1
+  # Header levels in elements directly written in MD must always be at the correct level
+  
+  # this structure is only contains list elements
+  # list elements may be:
+  #   list elements
+  #   yaml files: `*.yaml^` or UUIDv4
+  #   markdown files: `*.md^`
+  #   markdown text (default)
+  # NOTE:  Do NOT use the same document ID as the name for ANY OTHER FILE!  
+
 body: | # No more YAML comments after this point
   # Documentation management
 

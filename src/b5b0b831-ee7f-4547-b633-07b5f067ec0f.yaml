@@ -1,0 +1,39 @@
+%YAML 1.2
+---
+id: "b5b0b831-ee7f-4547-b633-07b5f067ec0f" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+title: "Requirement 12.10"
+subtitle: !
+author: "PCI Security Standards Council" #who wrote the document
+abstract: "Implement an incident response plan"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+source: "[PCI DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf)"
+classification: "public" # Options: [public|private|confidential]
+referenceTag:
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "12.10"
+  relationship: # `ID : [parent|peer|child]`
+    "2f3af308-8dd7-4632-9482-3936d386e04c": "parent"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
+revision:
+  - date: "20191111"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+body: |
+  # PCI DSS Requirements
+  
+  **12.10** Implement an incident response plan. Be prepared to respond immediately to a system breach.
+  
+  # Testing Procedures
+  
+  **12.10** Examine the incident response plan and related procedures to verify entity is prepared to respond immediately to a system breach by performing the following:
+  
+  # Guidance
+  
+  Without a thorough security incident response plan that is properly disseminated, read, and understood by the parties responsible, confusion and lack of a unified response could create further downtime for the business, unnecessary public media exposure, as well as new legal liabilities.
+...

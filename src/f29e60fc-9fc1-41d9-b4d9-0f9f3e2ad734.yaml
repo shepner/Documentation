@@ -1,0 +1,47 @@
+%YAML 1.2
+---
+id: "f29e60fc-9fc1-41d9-b4d9-0f9f3e2ad734" # [UUIDv4 generator](https://www.uuidgenerator.net/)
+title: "Requirement 12.11.1"
+subtitle: !
+author: "PCI Security Standards Council" #who wrote the document
+abstract: "Maintain documentation of review process"
+lang: "en"
+type: "regulation" # Options: [regulation|policy|standard|guidance|requirement|control|procedure]
+source: "[PCI DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf)"
+classification: "public" # Options: [public|private|confidential]
+referenceTag:
+  keywords: # This is a list (use `-`)
+    - "PCI":
+      - "PCI DSS v3.2.1":
+        - "12.11.1"
+  relationship: # `ID : [parent|peer|child]`
+    "24c4ffec-40cb-4abf-aa42-ce0677dc6b96": "parent"
+status: # this section is to provide some automatic documentation management
+  status: "complete" # Options: [draft|review|complete|expire]
+  effective: 201805
+  expire: !
+revision:
+  - date: "20191111"
+    name: "Stephen Hepner"
+    reason: "Current version of PCI DSS"
+body: |
+  # PCI DSS Requirements
+  
+  **12.11.1** **Additional requirement for service providers only**: Maintain documentation of quarterly review process to include:
+
+  * Documenting results of the reviews
+  * Review and sign-off of results by personnel assigned responsibility for the PCI DSS compliance program
+  
+  # Testing Procedures
+  
+  **12.11.1** Examine documentation from the quarterly reviews to verify they include:
+
+  * Documenting results of the reviews
+  * Review and sign-off of results by personnel assigned responsibility for the PCI DSS compliance program
+  
+  # Guidance
+  
+  ***Note**: This requirement applies only when the entity being assessed is a service provider.*
+ 
+  The intent of these independent checks is to confirm whether security activities are being performed on an ongoing basis. These reviews can also be used to verify that appropriate evidence is being maintained—for example, audit logs, vulnerability scan reports, firewall reviews, etc.—to assist the entity’s preparation for its next PCI DSS assessment.
+...
