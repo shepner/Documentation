@@ -1,0 +1,472 @@
+commit fae7fca7174531a3dc6b8154d1fd5f8168725fa7
+Author: Charles Leifer <coleifer@gmail.com>
+Date:   Mon Oct 6 21:34:41 2014 -0500
+
+    Changes
+
+diff --git a/api.py b/api.py
+index 0fed202..c6e9419 100644
+--- a/api.py
++++ b/api.py
+@@ -1,7 +1,9 @@
+ from flask import render_template
++from flask import request
+ from flask_peewee.rest import Authentication
+ from flask_peewee.rest import RestAPI
+ from flask_peewee.rest import RestResource
++from flask_peewee.utils import get_object_or_404
+ 
+ from app import app
+ from models import Note
+@@ -16,6 +18,29 @@ class NoteResource(RestResource):
+     fields = ('id', 'content', 'timestamp', 'status')
+     paginate_by = 30
+ 
++    def get_urls(self):
++        urls = super(NoteResource, self).get_urls()
++        return (
++            ('/search/', self.search),
++            ('/<pk>/details/', self.note_details),
++        ) + urls
++
++    def search(self):
++        query = request.args.get('query')
++        notes = Note.search(
++            request.args.get('query') or '',
++            request.args.get('days'))
++        notes = self.process_query(notes)
++        return self.paginated_object_list(notes)
++
++    def note_details(self, pk):
++        note = get_object_or_404(self.get_query(), self.pk == pk)
++        return self.response({
++            'content': note.unparse_content(),
++            'reminder': (note.reminder.strftime('%Y-%m-%dT%H:%M')
++                         if note.reminder else None),
++        })
++
+     def get_query(self):
+         return Note.public()
+ 
+diff --git a/app.py b/app.py
+index 3eaf3f5..bec602b 100644
+--- a/app.py
++++ b/app.py
+@@ -3,7 +3,7 @@ import os
+ from flask import Flask
+ from huey import RedisHuey
+ from micawber import bootstrap_basic
+-from peewee import SqliteDatabase
++from playhouse.sqlite_ext import SqliteExtDatabase
+ 
+ APP_ROOT = os.path.dirname(os.path.realpath(__file__))
+ DATABASE = os.path.join(APP_ROOT, 'notes.db')
+@@ -12,6 +12,6 @@ DEBUG = False
+ app = Flask(__name__)
+ app.config.from_object(__name__)
+ 
+-db = SqliteDatabase(app.config['DATABASE'], threadlocals=True)
++db = SqliteExtDatabase(app.config['DATABASE'], threadlocals=True)
+ huey = RedisHuey()
+ oembed = bootstrap_basic()
+diff --git a/main.py b/main.py
+index 546f95e..369522c 100644
+--- a/main.py
++++ b/main.py
+@@ -1,4 +1,8 @@
++import os
++
+ from app import app
++from app import db
++from models import FTSNote
+ from models import Note
+ from models import Task
+ from api import api
+@@ -7,6 +11,5 @@ import views
+ api.setup()
+ 
+ if __name__ == '__main__':
+-    Note.create_table(True)
+-    Task.create_table(True)
+-    app.run()
++    db.create_tables([FTSNote, Note, Task], safe=True)
++    app.run(debug=bool(os.environ.get('DEBUG')))
+diff --git a/migrate_notes.py b/migrate_notes.py
+new file mode 100644
+index 0000000..d470cb2
+--- /dev/null
++++ b/migrate_notes.py
+@@ -0,0 +1,21 @@
++from playhouse.migrate import *
++
++from app import db
++from models import *
++
++
++def run_migration():
++    migrator = SqliteMigrator(db)
++    with db.transaction():
++        migrate(
++            migrator.drop_column('note', 'reminder_task_created'),
++        )
++        FTSNote.create_table(True)
++
++    with db.transaction():
++        for note in Note.select():
++            FTSNote.store_note(note)
++
++
++if __name__ == '__main__':
++    run_migration()
+diff --git a/models.py b/models.py
+index febf075..ffcbc2c 100644
+--- a/models.py
++++ b/models.py
+@@ -1,9 +1,12 @@
+ import datetime
++import re
+ 
+ from flask import Markup
++from huey import crontab
+ from markdown import markdown
+ from micawber import parse_html
+ from peewee import *
++from playhouse.sqlite_ext import FTSModel
+ 
+ from app import db, huey, oembed
+ 
+@@ -24,7 +27,6 @@ class Note(Model):
+     timestamp = DateTimeField(default=datetime.datetime.now)
+     status = IntegerField(default=STATUS_VISIBLE, index=True)
+     reminder = DateTimeField(null=True)
+-    reminder_task_created = BooleanField(default=False)
+     reminder_sent = BooleanField(default=False)
+ 
+     class Meta:
+@@ -45,31 +47,44 @@ class Note(Model):
+         content = []
+         tasks = []
+         for line in self.content.splitlines():
+-            if line.startswith('@'):
+-                tasks.append(line[1:].strip())
++            if line.startswith('@!'):
++                tasks.append((True, line[2:].strip()))
++            elif line.startswith('@'):
++                tasks.append((False, line[1:].strip()))
+             else:
+                 content.append(line)
+         return '\n'.join(content), tasks
+ 
++    def unparse_content(self):
++        content = [self.content]
++        for task in self.get_tasks():
++            content.append('%s %s' % ('@!' if task.finished else '@',
++                                      task.title))
++        return '\n'.join(line for line in content if line)
++
+     def save(self, *args, **kwargs):
+         # Split out the text content and any tasks.
+         self.content, tasks = self.parse_content_tasks()
+ 
+-        # Determine if we need to set a reminder.
+-        set_reminder = self.reminder and not self.reminder_task_created
+-        self.reminder_task_created = True
++        # Update the timestamp.
++        self.timestamp = datetime.datetime.now()
+ 
+         # Save the note.
+         ret = super(Note, self).save(*args, **kwargs)
+ 
+-        if set_reminder:
+-            # Set a reminder to go off by enqueueing a task with huey.
+-            send_note_reminder.schedule(args=(self.id,), eta=self.reminder)
++        # Store the tasks in the database.
+         if tasks:
+-            # Store the tasks.
+             Task.delete().where(Task.note == self).execute()
+-            for idx, title in enumerate(tasks):
+-                Task.create(note=self, title=title, order=idx)
++            for idx, (finished, title) in enumerate(tasks):
++                Task.create(
++                    note=self,
++                    finished=finished,
++                    title=title,
++                    order=idx)
++
++        # Store the content for full-text search.
++        FTSNote.store_note(self)
++
+         return ret
+ 
+     @classmethod
+@@ -79,6 +94,60 @@ class Note(Model):
+                 .where(Note.status == Note.STATUS_VISIBLE)
+                 .order_by(Note.timestamp.desc()))
+ 
++    @classmethod
++    def search(cls, search_term, days_to_search=None):
++        words = [word.strip() for word in search_term.split() if word]
++        if not words:
++            return Note.select().where(Note.id == 0)
++        else:
++            search = ' '.join(words)
++
++        query = (Note
++                 .select(Note, FTSNote, FTSNote.rank().alias('score'))
++                 .join(FTSNote)
++                 .where(
++                     (Note.status == Note.STATUS_VISIBLE) &
++                     (FTSNote.match(search)))
++                 .order_by(SQL('score').desc(), Note.timestamp.desc()))
++
++        if days_to_search:
++            today = datetime.date.today()
++            query = query.where(
++                Note.timestamp.between(
++                    today - datetime.timedelta(days=int(days_to_search)),
++                    datetime.datetime.now()))
++
++        return query
++
++
++class FTSNote(FTSModel):
++    HTML_RE = re.compile('<.+?>')
++
++    note = ForeignKeyField(Note, primary_key=True)
++    content = TextField()
++
++    class Meta:
++        database = db
++
++    @classmethod
++    def store_note(cls, note):
++        try:
++            fts_note = FTSNote.get(FTSNote.note == note)
++        except FTSNote.DoesNotExist:
++            fts_note = FTSNote(note=note)
++            force_insert = True
++        else:
++            force_insert = False
++        fts_note.content = FTSNote.get_search_content(note)
++        fts_note.save(force_insert=force_insert)
++
++    @staticmethod
++    def get_search_content(note):
++        content = [FTSNote.HTML_RE.sub('', note.html())]
++        for task in note.get_tasks():
++            content.append(FTSNote.HTML_RE.sub('', task.html()))
++        return '\n'.join(line for line in content if line)
++
+ 
+ class Task(Model):
+     note = ForeignKeyField(Note, related_name='tasks')
+@@ -93,21 +162,21 @@ class Task(Model):
+         return rich_content(self.title)
+ 
+ 
+-@huey.task(retries=3, retry_delay=60)
+-def send_note_reminder(note_id):
+-    with database.transaction():
+-        try:
+-            note = Note.get(Note.id == note_id)
+-        except Note.DoesNotExist:
+-            app.logger.info(
+-                'Attempting to send reminder for note id=%s, but note '
+-                'was not found in the database.', note_id)
+-            return
+-
+-        if note.status == Note.STATUS_DELETED:
+-            app.logger.info('Attempting to send a reminder for a deleted '
+-                            'note id=%s. Skipping.', note_id)
+-            return
++@huey.periodic_task(crontab(minute='*/5'))
++def send_note_reminders():
++    query = (Note
++             .select()
++             .where(
++                 (Note.status != Note.STATUS_DELETED) &
++                 ~(Note.reminder >> None) &  # reminder IS NOT NULL.
++                 (Note.reminder < datetime.datetime.now()) &
++                 (Note.reminder_sent == False))
++             .order_by(Note.reminder))
++
++    for note in query:
++        app.logger.info(
++            'Sending reminder for Note(%s), reminder timestamp = %s.' %
++            (note.id, note.reminder.strftime('%Y-%m-%d %H:%M')))
+ 
+         try:
+             mailer.send(
+@@ -115,8 +184,8 @@ def send_note_reminder(note_id):
+                 subj='[notes] reminder',
+                 body=note.content)
+         except:
+-            app.logger.info('Sending reminder failed for note id=%s.', note_id)
+-            raise
++            app.logger.info('Sending reminder failed for Note(%s).' % note.id)
+         else:
+-            note.reminder_sent = True
+-            note.save()
++            app.logger.info('Reminder for Note(%s) sent successfully.' %
++                            note.id)
++            Note.update(reminder_sent=True).where(Note.id == note.id).execute()
+diff --git a/requirements.txt b/requirements.txt
+index a747f14..a310559 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -3,3 +3,6 @@ peewee
+ micawber
+ beautifulsoup
+ markdown
++flask-peewee
++huey
++redis
+diff --git a/static/js/notes.js b/static/js/notes.js
+index 7d74b71..5aea866 100644
+--- a/static/js/notes.js
++++ b/static/js/notes.js
+@@ -10,6 +10,7 @@ Notes = window.Notes || {};
+     this.form = $('form#note-form');
+     this.content = this.form.find('textarea#content');
+     this.reminder = this.form.find('input[name="reminder"]');
++    this.cancelEditBtn = this.form.find('a#cancel-edit');
+     this.container = $('ul.notes');
+ 
+     // Bind handlers.
+@@ -43,6 +44,10 @@ Notes = window.Notes || {};
+       e.preventDefault();
+       self.addNote();
+     });
++    this.cancelEditBtn.on('click', function(e) {
++      e.preventDefault();
++      self.resetForm();
++    });
+   }
+ 
+   Editor.prototype.bindArchiveDelete = function() {
+@@ -79,15 +84,19 @@ Notes = window.Notes || {};
+ 
+   /* Loading and saving notes. */
+   Editor.prototype.getList = function(page, search) {
+-    var requestData = {};
+-    var self = this;
++    var requestData = {},
++        self = this,
++        url = search ? '/api/note/search/' : '/api/note/';
+ 
+     this.container.empty();
+ 
+     if (page) requestData['page'] = page;
+-    if (search) requestData['content__ilike'] = '%' + search + '%';
++    if (search) requestData['query'] = search;
+ 
+-    this.makeRequest('/api/note/', 'GET', requestData, function(data) {
++    this.makeRequest(url, 'GET', requestData, function(data) {
+       data.objects.reverse();
+       $.each(data.objects, function(idx, note) {
+         self.addNoteToList(note.rendered);
+@@ -106,6 +115,10 @@ Notes = window.Notes || {};
+       e.preventDefault();
+       self.changeNote($(this));
+     });
++    listElem.find('a.edit-note').on('click', function(e) {
++      e.preventDefault();
++      self.editNote($(this));
++    });
+     listElem.find('input[type="checkbox"]').on('change', function(e) {
+       self.updateTask($(this));
+     });
+@@ -143,7 +156,9 @@ Notes = window.Notes || {};
+       return
+     }
+ 
+-    var note = {'content': this.content.val()};
++    var note = {'content': this.content.val()},
++        isEdit = this.cancelEditBtn.is(':visible');
++
+     if (this.reminder.is(':visible') && this.reminder.val()) {
+       // Fix any bizarre date formats.
+       var dateTime = this.reminder.val().replace('T', ' ').split('Z')[0];
+@@ -152,15 +167,25 @@ Notes = window.Notes || {};
+       }
+       note['reminder'] = dateTime;
+     }
++
+     var self = this;
+     this.content.css('color', '#464545');
+     this.makeRequest(this.form.attr('action'), 'POST', note, function(data) {
+-      self.content.val('').focus();
+-      self.resetReminder();
++      self.resetForm();
++      if (isEdit) {
++        $('div#note-panel-' + data.id).remove();
++      }
+       self.addNoteToList(data.rendered);
+     });
+   }
+ 
++  Editor.prototype.resetForm = function() {
++    this.form.attr('action', '/api/note/');
++    this.cancelEditBtn.hide();
++    this.content.val('').focus();
++    this.resetReminder();
++  }
++
+   Editor.prototype.resetReminder = function() {
+     var now = new Date();
+     var pad = function(v) {return ('0' + v).slice(-2);}
+@@ -172,6 +197,25 @@ Notes = window.Notes || {};
+     );
+   }
+ 
++  Editor.prototype.editNote = function(noteLink) {
++    var self = this,
++        noteId = noteLink.data('note'),
++        panel = noteLink.parents('.panel'),
++        detailsUrl = noteLink.attr('href') + 'details/';
++
++    self.makeRequest(detailsUrl, 'GET', {}, function(response) {
++      self.content.val(response.content);
++      if (response.reminder) {
++        self.reminder.show();
++        self.reminder.val(response.reminder);
++      } else {
++        self.reminder.hide();
++      }
++      self.form.attr('action', noteLink.attr('href'));
++      self.cancelEditBtn.show();
++    });
++  }
++
+   Editor.prototype.changeNote = function(noteLink) {
+     var noteData = {};
+     var panel = noteLink.parents('.panel');
+diff --git a/templates/homepage.html b/templates/homepage.html
+index eb3b001..8684166 100644
+--- a/templates/homepage.html
++++ b/templates/homepage.html
+@@ -31,6 +31,9 @@
+         <button class="btn btn-primary btn-xs" type="submit">
+           <span class="glyphicon glyphicon-plus"></span> Add Note
+         </button>
++        <a class="btn btn-danger btn-xs" href="#" id="cancel-edit" style="display:none;">
++          <span class="glyphicon glyphicon-remove"></span> Cancel edit
++        </a>
+         <textarea class="form-control" id="content" name="content"></textarea>
+         <input class="input-sm" name="reminder" step="600" style="display:none;" type="datetime-local" value="" />
+       </form>
+diff --git a/templates/note.html b/templates/note.html
+index 8706f77..5e61324 100644
+--- a/templates/note.html
++++ b/templates/note.html
+@@ -1,8 +1,9 @@
+ <li class="note col-xs-12 col-sm-6 col-lg-4">
+-  <div class="panel panel-{% if note.reminder %}warning{% else %}primary{% endif %}">
++  <div class="panel panel-{% if note.reminder %}warning{% else %}primary{% endif %}" id="note-panel-{{ note.id }}">
+     <div class="panel-heading">
+       <a class="btn btn-danger btn-xs delete-note pull-right" data-note="{{ note.id }}" href="/api/note/{{ note.id }}/">&times;</a>
+       <a class="btn btn-info btn-xs archive-note pull-right" data-note="{{ note.id }}" href="/api/note/{{ note.id }}/">a</a>
++      <a class="btn btn-primary btn-xs edit-note pull-right" data-note="{{ note.id }}" href="/api/note/{{ note.id }}/">e</a>
+       {{ note.timestamp.strftime('%b %d, %Y - %I:%M%p').lower() }}
+     </div>
+     <div class="panel-body">

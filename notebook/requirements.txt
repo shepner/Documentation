@@ -1,0 +1,8 @@
+flask
+peewee
+micawber
+beautifulsoup
+markdown
+flask-peewee
+huey
+redis
