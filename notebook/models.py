@@ -127,12 +127,19 @@ class FTSNote(FTSModel):
 
     class Meta:
         database = db
+        
+    @staticmethod
+    def get_search_content(note):
+        content = [FTSNote.HTML_RE.sub('', note.html())]
+        for task in note.get_tasks():
+            content.append(FTSNote.HTML_RE.sub('', task.html()))
+        return '\n'.join(line for line in content if line)
 
     @classmethod
     def store_note(cls, note):
         content = FTSNote.get_search_content(note)
         try:
-            FTSNote.get(FTSNote.note == note)
+            FTSNote.get(FTSNote.docid == note.id)
         except FTSNote.DoesNotExist:
             FTSNote.create(docid=note.id, content=content)
         else:
@@ -141,12 +148,7 @@ class FTSNote(FTSModel):
              .where(FTSNote.docid == note.id)
              .execute())
 
-    @staticmethod
-    def get_search_content(note):
-        content = [FTSNote.HTML_RE.sub('', note.html())]
-        for task in note.get_tasks():
-            content.append(FTSNote.HTML_RE.sub('', task.html()))
-        return '\n'.join(line for line in content if line)
+    
 
 
 class Task(Model):

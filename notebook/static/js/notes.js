@@ -81,18 +81,18 @@ Notes = window.Notes || {};
       self.getList(1, query);
     });
   }
-
-  /* Loading and saving notes. */
+  
   Editor.prototype.getList = function(page, search) {
-    var requestData = {},
-        self = this,
-        url = search ? '/api/note/search/' : '/api/note/';
+    var requestData = {};
+    var self = this;
+    var url = search ? '/api/note/search/' : '/api/note/'; // New.
 
     this.container.empty();
 
     if (page) requestData['page'] = page;
-    if (search) requestData['query'] = search;
+    if (search) requestData['query'] = search;  // New: include the search query.
 
+    // New: this call changed from a hard-coded URL to the new url variable.
     this.makeRequest(url, 'GET', requestData, function(data) {
       data.objects.reverse();
       $.each(data.objects, function(idx, note) {

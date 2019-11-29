@@ -37,7 +37,7 @@ Management responsibilities and procedures should be established to ensure a qui
 3. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3.2 Plan Elements
 </details>
 
-## Organizational structure and responsibilities
+# Organizational structure and responsibilities
 
 The Security Incident Management group reports to the Manager of Cyber Security.
 
@@ -67,7 +67,7 @@ Consultants are to be used for the first level screening of incoming information
 5. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.4.1 Team Models
 </details>
 
-## Procedure
+# Procedure
 
 Group team members are to monitor systems, alerts, and vulnerabilities to detect security incidents.
 
@@ -118,7 +118,7 @@ priorities of the organization are reflected in response operations. In addition
 6. NIST [SP 800-61 Rev. 2 - Computer Security Incident Handling Guide](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final): 2.3.3 Procedure Elements
 </details>
 
-## Recovery
+# Recovery
 
 action to recover from security breaches and correct system failures should be carefully and formally controlled; the procedures should ensure that:
 
@@ -133,7 +133,7 @@ action to recover from security breaches and correct system failures should be c
 2. ISO 27002:2005 13.2.1.d "Responsibility and procedures"
 </details>
 
-## Escalation procedures
+# Escalation procedures
 
 The objectives for information security incident management should be agreed with management, and it should be ensured that those responsible for information security incident management understand the organization’s priorities for handling information security incidents.
 
@@ -167,7 +167,7 @@ The evaluation of information security incidents may indicate the need for enhan
 5. PCI DSS 3.2.1 "Requirement [12.11.1](f29e60fc-9fc1-41d9-b4d9-0f9f3e2ad734)" Maintain documentation of review process
 </details>
 
-## Reporting, metrics and cyber intelligence
+# Reporting, metrics and cyber intelligence
 
 
 2.3.4 Sharing Information With Outside Parties

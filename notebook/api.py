@@ -18,19 +18,30 @@ class NoteResource(RestResource):
     fields = ('id', 'content', 'timestamp', 'status')
     paginate_by = 30
 
+    #def get_urls(self):
+    #    urls = super(NoteResource, self).get_urls()
+    #    return (
+    #        ('/search/', self.search),
+    #        ('/<pk>/details/', self.note_details),
+    #    ) + urls
+      
     def get_urls(self):
-        urls = super(NoteResource, self).get_urls()
         return (
             ('/search/', self.search),
-            ('/<pk>/details/', self.note_details),
-        ) + urls
+        ) + super(NoteResource, self).get_urls()
 
+    #def search(self):
+    #    query = request.args.get('query')
+    #    notes = Note.search(
+    #        request.args.get('query') or '',
+    #        request.args.get('days'))
+    #    notes = self.process_query(notes)
+    #    return self.paginated_object_list(notes)
+      
     def search(self):
         query = request.args.get('query')
-        notes = Note.search(
-            request.args.get('query') or '',
-            request.args.get('days'))
-        notes = self.process_query(notes)
+        notes = Note.search(request.args.get('query') or '')
+        notes = self.process_query(notes)  # Apply any filters, etc.
         return self.paginated_object_list(notes)
 
     def note_details(self, pk):
